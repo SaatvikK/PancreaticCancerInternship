@@ -40,12 +40,20 @@ class DataSlicer:
       df = self.slicedDFs[key]
       df.to_csv(index = False, path_or_buf = f"{path}/{key}.csv")
 
-
+  def oneToManySlicing(self, oneTable = "patient", manyTable = "gene", oneCol = "PATIENTID", manyCol = "GENEID", printOut = True):
+    if printOut: print("================================= Gene =================================")
+    onedf = self.slicedDFs[oneTable]
+    manydf = self.fulldfs[manyTable]
+    patients = onedf[oneCol].tolist()
+    slicedMany = manydf[manydf[manyCol].isin(patients)]
+    self.slicedDFs[manyTable] = slicedMany # add sliced patients to dict.
+    if printOut: print(slicedMany)
+    return slicedMany
   
   def createSlice(self):
     # First, for all CSVs in /Data, get the tables
     tables = os.listdir(self.tablesPath) # get everything inside the tables dir - in /Data there is only files, so no need to worry about dirs.
-    tables = ["sim_av_tumour.csv", "sim_av_patient.csv", "sim_av_gene.csv"]
+    tables = ["sim_av_tumour.csv", "sim_av_patient.csv", "sim_av_gene.csv", "sim_sact_regimen.csv", "sim_rtds_episode.csv"]
 
     for table in tables:
       # Quickly determine the DF name by isolating the important information in the table's file name.
@@ -55,7 +63,7 @@ class DataSlicer:
       print(theDFName)
       df = self.getTable(tableName = table, dfName = theDFName)
       print(df)
-
+    print(list(self.fulldfs.keys()))
     # Now, we slice each table following the order of relations provided in the Simulacrum's User Guide.
 
     # ================================ Tumour ================================ #
@@ -67,6 +75,7 @@ class DataSlicer:
     # ======================================================================== #
 
     # =============================== Patient =============================== #
+    # Tumour -> Patient, many to one relationship
     print("=============================== Patient ===============================")
     tumourdf = self.slicedDFs["tumour"]
     patientdf = self.fulldfs["patient"]
@@ -84,15 +93,22 @@ class DataSlicer:
     # ======================================================================== #
 
     # ================================= Gene ================================= #
-    print("================================= Gene =================================")
-    
-    tumourdf = self.slicedDFs["tumour"]
-    genedf = self.fulldfs["gene"]
-    tumours = tumourdf.TUMOURID.tolist()
-    slicedGenes = genedf[genedf.TUMOURID.isin(tumours)]
-    self.slicedDFs["gene"] = slicedGenes # add sliced patients to dict.
+    # Tumour -> Gene, one to many relationship
+    self.oneToManySlicing(oneTable = "tumour", manyTable = "gene", oneCol = "TUMOURID", manyCol = "TUMOURID")
     # ======================================================================== #
 
+    # ================================ Regimen =============================== #
+    # Patient -> Regimen, one to many relationship
+    self.oneToManySlicing(oneTable = "patient", manyTable = "regimen", oneCol = "PATIENTID", manyCol = "ENCORE_PATIENT_ID")
+
+    # ======================================================================== #
+
+    # ================================ Episode =============================== #
+    # Patient -> Episode, one to many relationship
+    self.oneToManySlicing(oneTable = "patient", manyTable = "episode", oneCol = "PATIENTID", manyCol = "PATIENTID")
+    # ======================================================================== #
+
+    # ================================ Episode =============================== #
     self.saveToCSV()
 
 
