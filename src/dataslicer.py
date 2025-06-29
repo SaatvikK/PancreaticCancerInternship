@@ -41,11 +41,11 @@ class DataSlicer:
       df.to_csv(index = False, path_or_buf = f"{path}/{key}.csv")
 
   def oneToManySlicing(self, oneTable = "patient", manyTable = "gene", oneCol = "PATIENTID", manyCol = "GENEID", printOut = True):
-    if printOut: print("================================= Gene =================================")
+    if printOut: print("=================================", manyTable.capitalize(), "=================================")
     onedf = self.slicedDFs[oneTable]
     manydf = self.fulldfs[manyTable]
-    patients = onedf[oneCol].tolist()
-    slicedMany = manydf[manydf[manyCol].isin(patients)]
+    oneColList = onedf[oneCol].tolist()
+    slicedMany = manydf[manydf[manyCol].isin(oneColList)]
     self.slicedDFs[manyTable] = slicedMany # add sliced patients to dict.
     if printOut: print(slicedMany)
     return slicedMany
@@ -53,7 +53,10 @@ class DataSlicer:
   def createSlice(self):
     # First, for all CSVs in /Data, get the tables
     tables = os.listdir(self.tablesPath) # get everything inside the tables dir - in /Data there is only files, so no need to worry about dirs.
-    tables = ["sim_av_tumour.csv", "sim_av_patient.csv", "sim_av_gene.csv", "sim_sact_regimen.csv", "sim_rtds_episode.csv"]
+    tables = [
+      "sim_av_tumour.csv", "sim_av_patient.csv", "sim_av_gene.csv", "sim_sact_regimen.csv", "sim_rtds_episode.csv", 
+      "sim_sact_outcome.csv", "sim_sact_cycle.csv", "sim_sact_drug-detail.csv", "sim_rtds_prescription.csv"
+    ]
 
     for table in tables:
       # Quickly determine the DF name by isolating the important information in the table's file name.
@@ -108,14 +111,53 @@ class DataSlicer:
     self.oneToManySlicing(oneTable = "patient", manyTable = "episode", oneCol = "PATIENTID", manyCol = "PATIENTID")
     # ======================================================================== #
 
-    # ================================ Episode =============================== #
-    self.saveToCSV()
+    # ================================ Outcome =============================== #
+    # Regimen -> Outcome, one to many relationship
+    self.oneToManySlicing(oneTable = "regimen", manyTable = "outcome", oneCol = "MERGED_REGIMEN_ID", manyCol = "MERGED_REGIMEN_ID")
+    # ======================================================================== #
+
+    # ================================= Cycle ================================ #
+    # Regimen -> Outcome, one to many relationship
+    self.oneToManySlicing(oneTable = "regimen", manyTable = "cycle", oneCol = "MERGED_REGIMEN_ID", manyCol = "MERGED_REGIMEN_ID")
+    # ======================================================================== #
+
+    # ============================== Drug Detail ============================= #
+    # Regimen -> Outcome, one to many relationship
+    self.oneToManySlicing(oneTable = "cycle", manyTable = "drug-detail", oneCol = "MERGED_CYCLE_ID", manyCol = "MERGED_CYCLE_ID")
+    # ======================================================================== #
+
+    # ============================== Prescription ============================ #
+    # Episode -> Prescription, one to many relationship
+    print("============================== Prescription ============================")
+    episodedf = self.slicedDFs["episode"]
+    prescriptiondf = self.fulldfs["prescription"]
+
+    # Define the columns that form the composite key for the join
+    key_columns = [
+        'PATIENTID',
+        'RADIOTHERAPYEPISODEID',
+        'ATTENDID',
+        'LINKCODE'
+    ]
+
+    # Use a 'right' join to keep all original prescription columns,
+    # but only for rows that have a matching key in episodedf.
+    # The 'inner' join is often preferred and clearer for this filtering task.
+    slicedPresciptions = pd.merge(
+        left=episodedf[key_columns], # Only the keys are needed from the 'one' side
+        right=prescriptiondf,
+        on=key_columns,
+        how='inner' # 'inner' join ensures only matching records are kept
+    )
+
+    self.slicedDFs["prescription"] = slicedPresciptions # add sliced patients to dict.
+    print(slicedPresciptions)
+    # ======================================================================== #
 
 
 
 
-slicer = DataSlicer("../data-v2-original/Data", tumourCode = "C25")
+############### DRIVER CODE ###############
+slicer = DataSlicer("../data-v2-original/Data", tumourCode = "C61")
 slicer.createSlice()
-
-
-#pancreatic.to_csv(index=False, path_or_buf = "panc.csv")
+slicer.saveToCSV()

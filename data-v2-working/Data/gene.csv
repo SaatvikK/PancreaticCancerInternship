@@ -1,326 +1,448 @@
 GENEID,TUMOURID,PATIENTID,GENE_DESC,GENE,COUNT_TESTS,COUNT_RESULTS,COUNT_DATE,ALL_TESTSTATUSES,OVERALL_TS,NO_OF_AB_GATS,DNASEQ_GAT,METHYL_GAT,EXP_GAT,COPYNO_GAT,FUS_TRANS_GAT,ABNORMAL_GAT,NO_OF_SEQ_VARS,ALL_SEQ_VARS,SEQ_VAR,DATE_OVERALL_TS,BEST_DATE_SOURCE_OVERALL_TS,MIN_DATE,MAX_DATE,ALL_PRO_IMPS,NO_OF_PRO_IMPS,PRO_IMP,METHODS,LAB_NAME
-10040421,10514272,10379118,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-21,,,,,0,,,
-10056858,11757329,10388828,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-01,,,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-10058172,11877004,10354315,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-01,2)requesteddate,,,,0,,"Sequencing, Next Generation (NGS)",Cambridge (molecular lab)
-10065570,11918167,10342392,BRCA1,7,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-07,,,,,0,,"Sequencing, Next Generation (NGS)",
-10069481,11918167,10342392,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-07,,2018-04-17,2018-03-07,,0,,,
-20134284,11390377,20133526,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-04,,,,,0,,,
-20157754,10381154,20119241,PDGFRA,59,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-08,,,,,0,,,
-30090814,11381811,30111194,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-09,,,,,0,,,
-30090819,10285809,30111295,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-02,,,,,0,,,
-30090826,11422580,30111680,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-19,,,,,0,,,
-30090868,11562859,30113955,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-26,,,,,0,,,
-40124285,10839466,40136959,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-06,,,,,0,,,
-40124721,11418343,40151537,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-04,,,,,0,,Immunochemistry,
-40203840,11185569,40144607,BRAF,6,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-20,3)receiveddate,,2019-11-20,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Birmingham (molecular lab)
-40284018,10063959,40132583,KRAS,47,1,1,1,e:failed,e:failed,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-03-08,1)authoriseddate,,,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Newcastle (molecular lab)
-40311122,10582411,40136662,EGFR,24,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-27,1)authoriseddate,,,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Birmingham (molecular lab)
-50018488,10034120,50156598,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-30,,,,,0,,,
-50018917,11769027,50161627,CD274 (PD-L1),4842,1,1,1,a:abnormal,a:abnormal,0,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-18,3)receiveddate,,,,0,,Roche COBAS,Manchester (molecular lab)
-60066576,10978569,60054228,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-28,1)authoriseddate,2018-05-27,,,0,,"Sequencing, Next Generation (NGS)",Birmingham (molecular lab)
-60066579,11288030,60054644,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-09,,,,,0,,,
-60066911,10795441,60102330,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-20,,,,,0,,,
-60078628,11288030,60054644,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-20,3)receiveddate,2019-06-26,,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Birmingham (molecular lab)
-60078708,11765388,60071641,KRAS,47,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2016-12-15,,,,,0,,,
-70069504,11478320,70091110,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-02,,,,,0,,,
-80023228,10763718,80051198,NRAS,56,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2016-11-11,,,,,0,,,
-80023243,11070886,80051836,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-28,,,,,0,,,
-80023609,10788698,80064289,MPL,2779,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2018-06-19,,,,,0,,,
-80023740,11467878,80067521,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-20,,,,,0,,,
-80036202,10656594,80058677,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-07,,,,,0,,,
-80036306,11671307,80063985,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-10,,,,,0,,,
-80043528,10619895,80051679,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-26,,,2018-05-26,,0,,,
-80043589,10063038,80056692,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-17,,,,,0,,,
-80047866,11698139,80068010,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-02,,2017-03-30,,,0,,,
-90074963,10643149,90022618,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-29,,,,,0,,,
-90075061,10186750,90043965,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-09-01,,,,,0,,,
-100046237,11453408,100010863,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-22,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Leeds (molecular lab)
-100046256,11900568,100011782,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-17,,,2018-11-17,,0,,,
-100046376,11883794,100017010,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-02-20,1)authoriseddate,2019-02-23,,,0,,"Sequencing, Next Generation (NGS)",Leeds (molecular lab)
-100087588,11900568,100011782,CDK4,18,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-17,1)authoriseddate,,,,0,,,
-100087678,10431180,100016287,CDK4,18,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-18,1)authoriseddate,,2019-06-24,,0,,,Royal Marsden (molecular lab)
-100119554,10277577,100005510,RB1,64,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-21,1)authoriseddate,2017-10-13,,,0,,"Sequencing, Next Generation (NGS)",
-100119723,10431180,100016287,DDR2,23,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,c:borderline_a_fusion/trans,,0,,,2019-06-28,,2019-05-22,,,0,,"Sequencing, Next Generation (NGS)",
-100142001,10431180,100016287,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-28,1)authoriseddate,2019-07-25,,,0,,,Birmingham (molecular lab)
-100156797,11706832,100008008,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-15,,2016-12-31,,,0,,,
-100157094,11054059,100033737,NTRK3,3111,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-01,,,2019-08-01,,0,,Immunochemistry,
-100166778,11900568,100011782,AR,391,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-23,,,,,0,,,
-100166799,10431180,100016287,NTRK2,3110,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-05,,,2019-08-05,,0,,,
-100177915,11453408,100010863,NTRK3,3111,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-14,1)authoriseddate,,,,0,,Immunochemistry,Royal Marsden (molecular lab)
-120008374,10761383,120022151,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-24,,,,,0,,,
-120011943,10761383,120022151,CALR,670,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-21,,,,,0,,,
-130025795,10611483,130025795,PDGFRA,59,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.2525A>T,c.2525A>T,2019-07-20,3)receiveddate,2019-07-21,2019-07-20,p.(Val73Argfs*76),1,p.(Val73Argfs*76),"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130025813,10665033,130025813,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-01-01,,2018-01-24,2018-01-01,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130025841,10761878,130025841,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-18,,,2018-09-18,,0,,Immunochemistry,Birmingham (molecular lab)
-130025855,10560536,130025855,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.499C>T,c.499C>T,2019-12-30,,,,p.(Arg248Gln),1,p.(Arg248Gln),Immunochemistry,Birmingham (molecular lab)
-130025874,11087224,130025874,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-11,1)authoriseddate,2018-08-27,2018-08-11,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130025877,11462817,130025877,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-04,,,2018-11-04,,0,,Immunochemistry,Birmingham (molecular lab)
-130025900,11813144,130025900,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.818G>A,c.818G>A,2019-03-05,,2019-03-29,2019-03-05,,0,,Immunochemistry,Birmingham (molecular lab)
-130025937,11277568,130025937,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-17,3)receiveddate,2019-11-20,2019-11-17,,0,,Immunochemistry,Birmingham (molecular lab)
-130025949,10969103,130025949,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-04-12,1)authoriseddate,2018-03-16,2018-04-12,,0,,"Sequencing, Dideoxy/Sanger",Leeds (molecular lab)
-130025969,11135601,130025969,TP53,79,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-07,1)authoriseddate,2019-07-10,2019-07-07,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130025984,10126084,130025984,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,2,"c.375+1G>A,c.783-1G>T",multiple,2019-03-26,1)authoriseddate,2019-04-13,2019-03-26,p.(Gln100Ter),1,p.(Gln100Ter),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026030,10061017,130026030,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-02-27,1)authoriseddate,2017-03-08,2017-02-27,,0,,SSCP,Royal Marsden (molecular lab)
-130026073,10439303,130026073,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-03,,,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026080,11790060,130026080,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.216dupC,c.216dupC,2018-01-24,,,2018-01-24,,0,,Immunochemistry,Birmingham (molecular lab)
-130026086,10375658,130026086,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-07-12,1)authoriseddate,2017-07-12,2017-07-12,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026113,11124503,130026113,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-30,3)receiveddate,,2019-06-30,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130026152,11431604,130026152,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-06-14,3)receiveddate,2016-06-19,,,0,,Immunochemistry,Birmingham (molecular lab)
-130026160,11251276,130026160,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-28,1)authoriseddate,2018-12-01,2018-11-28,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026208,11708812,130026208,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-29,1)authoriseddate,2019-01-30,2019-01-29,,0,,Immunochemistry,Birmingham (molecular lab)
-130026217,10640844,130026217,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,2,"c.637C>T,c.833C>T",multiple,2019-06-04,,,,p.(Glu298AspfsTer47),1,p.(Glu298AspfsTer47),Immunochemistry,Birmingham (molecular lab)
-130026223,11262467,130026223,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-14,1)authoriseddate,2018-07-11,2018-07-14,,0,,Multiple methods,Royal Marsden (molecular lab)
-130026226,10635446,130026226,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-05-29,,,2018-05-29,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026251,10009723,130026251,PDGFRA,59,1,1,1,f:not_tested,f:not_tested,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-21,2)requesteddate,2019-05-14,2019-04-21,p.(Met237Ile),1,p.(Met237Ile),"Sequencing, Next Generation (NGS)",Cambridge (molecular lab)
-130026258,11174103,130026258,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-14,1)authoriseddate,2019-12-21,2019-12-14,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026318,10685187,130026318,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-02,3)receiveddate,2019-04-01,2019-04-02,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026319,11295719,130026319,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-06,1)authoriseddate,2018-08-12,,,0,,"Sequencing, Next Generation (NGS)",Leeds (molecular lab)
-130026322,10468815,130026322,ERBB2 (HER2 / NEU),26,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,0,,,2016-04-20,,,2016-04-20,,0,,Immunochemistry,Birmingham (molecular lab)
-130026351,11109339,130026351,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-17,1)authoriseddate,2018-09-21,2019-01-17,,0,,"Sequencing, Dideoxy/Sanger",Newcastle (molecular lab)
-130026352,11391048,130026352,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-02,,,2018-12-02,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Sheffield (molecular lab)
-130026353,11077236,130026353,TP53,79,1,2,1,"a:abnormal,a:abnormal",a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.536A>T,c.536A>T,2019-02-15,1)authoriseddate,2019-02-13,2019-02-28,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026364,10027296,130026364,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,2,"c.466del,c.733G>T",multiple,2019-05-02,1)authoriseddate,2019-04-13,2019-05-02,p.(Tyr236Cys),1,p.(Tyr236Cys),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026369,10745194,130026369,ERBB2 (HER2 / NEU),26,1,2,1,"b:normal,c:borderline",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-31,1)authoriseddate,2016-10-21,2016-10-31,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130026375,11161735,130026375,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-07,1)authoriseddate,2016-04-19,2016-08-07,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130026396,10712047,130026396,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-19,3)receiveddate,2016-11-07,2016-10-19,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130026438,11367356,130026438,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-21,,,2019-02-12,,0,,Immunochemistry,Birmingham (molecular lab)
-130026452,11056012,130026452,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.524G>A,c.524G>A,2019-02-27,,2018-08-22,,p.(Asp842Val),1,p.(Asp842Val),Immunochemistry,Birmingham (molecular lab)
-130026482,10887266,130026482,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-29,1)authoriseddate,2019-08-28,2019-09-01,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026484,10000882,130026484,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-29,1)authoriseddate,2016-09-01,2016-08-29,,0,,Multiple methods,Royal Marsden (molecular lab)
-130026521,11261104,130026521,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-13,1)authoriseddate,2019-09-12,2019-09-13,,0,,Multiple methods,Royal Marsden (molecular lab)
-130026590,11593363,130026590,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.527G>T,c.527G>T,2018-07-07,1)authoriseddate,2018-07-13,,p.(Tyr234Asn),1,p.(Tyr234Asn),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026595,11954294,130026595,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-11,1)authoriseddate,2019-08-21,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026608,10538283,130026608,PDGFRA,59,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.1682T>A,c.1682T>A,2019-06-22,1)authoriseddate,2019-06-24,,p.(Val216Leu),1,p.(Val216Leu),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026638,10032399,130026638,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-09-14,1)authoriseddate,2016-09-12,2016-10-07,,0,,Immunochemistry,Birmingham (molecular lab)
-130026643,11754258,130026643,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-17,,2016-09-02,,,0,,Immunochemistry,Birmingham (molecular lab)
-130026649,10367373,130026649,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-06,3)receiveddate,2019-03-12,2019-03-06,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026652,11645375,130026652,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-07,1)authoriseddate,2019-04-10,,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130026674,11543310,130026674,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-01-23,3)receiveddate,2018-02-12,2018-01-23,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026798,11111502,130026798,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-02,3)receiveddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
-130026802,10393052,130026802,PDGFRA,59,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.2525A>T,c.2525A>T,2018-12-15,1)authoriseddate,2018-12-04,2021-01-10,p.(Cys242Tyr),1,p.(Cys242Tyr),Multiple methods,Royal Marsden (molecular lab)
-130026827,11116443,130026827,TP53,79,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-31,3)receiveddate,2019-06-27,2019-07-31,,0,,Immunochemistry,Birmingham (molecular lab)
-130026863,10355077,130026863,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-03,,2018-09-19,2018-09-03,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130026875,11431082,130026875,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-03-01,3)receiveddate,2017-03-03,2017-03-01,,0,,Immunochemistry,Birmingham (molecular lab)
-130026884,10575442,130026884,TP53,79,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-11,,2019-11-05,2019-10-11,,0,,"FISH - Specific Probe,Immunochemistry",Birmingham (molecular lab)
-130026897,11973080,130026897,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,b:normal_copy_no,n:not_applicable_null,,0,,,2017-12-21,,,,,0,,Immunochemistry,Birmingham (molecular lab)
-130026921,10751790,130026921,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.396G>C,c.396G>C,2018-08-04,1)authoriseddate,2018-08-08,2018-08-04,p.(Arg306Ter),1,p.(Arg306Ter),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130026932,11491592,130026932,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-28,,2016-08-22,2016-09-25,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130026934,10559335,130026934,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.637C>T,c.637C>T,2019-08-28,1)authoriseddate,2019-09-19,,p.(Arg213Pro),1,p.(Arg213Pro),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027021,11056453,130027021,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.455dupC,c.455dupC,2017-03-16,1)authoriseddate,2017-03-29,2017-03-16,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027023,10328016,130027023,ERBB2 (HER2 / NEU),26,1,2,1,"b:normal,c:borderline",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-11,2)requesteddate,2017-08-02,2018-02-11,,0,,Immunochemistry,Birmingham (molecular lab)
-130027068,11099187,130027068,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-05-14,,,2016-05-14,,0,,Immunochemistry,Birmingham (molecular lab)
-130027134,11578139,130027134,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.404G>A,c.404G>A,2018-04-09,2)requesteddate,2018-05-01,2018-04-09,p.(Cys176Tyr),1,p.(Cys176Tyr),"Sequencing, Dideoxy/Sanger",Cambridge (molecular lab)
-130027227,11236970,130027227,ERBB2 (HER2 / NEU),26,1,2,1,"b:normal,c:borderline",b:normal,0,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,b:normal_copy_no,n:not_applicable_null,,0,,,2016-10-16,1)authoriseddate,2016-10-13,,,0,,Immunochemistry,Birmingham (molecular lab)
-130027247,10394875,130027247,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-15,1)authoriseddate,2019-10-06,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027251,11186958,130027251,ERBB2 (HER2 / NEU),26,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-11-06,1)authoriseddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
-130027256,10859343,130027256,ERBB2 (HER2 / NEU),26,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2018-11-24,1)authoriseddate,,2018-11-24,,0,,Immunochemistry,Birmingham (molecular lab)
-130027274,11667370,130027274,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-10,,2017-10-10,2017-11-10,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130027329,10209495,130027329,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-10,3)receiveddate,2019-02-13,2019-02-10,,0,,FISH - Specific Probe,Birmingham (molecular lab)
-130027370,11991191,130027370,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.817C>T,c.817C>T,2019-03-23,1)authoriseddate,2019-04-04,2019-03-23,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027380,10244966,130027380,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.370_371insC,c.370_371insC,2019-01-03,1)authoriseddate,2019-01-12,2019-01-03,p.(Arg290His),1,p.(Arg290His),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027382,10076975,130027382,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-03,1)authoriseddate,2019-08-06,2019-08-03,,0,,SSCP,Royal Marsden (molecular lab)
-130027383,11047742,130027383,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-26,1)authoriseddate,2019-04-21,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130027403,10281472,130027403,PDGFRA,59,2,2,2,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-03-29,1)authoriseddate,2016-03-28,2016-03-29,,0,,"Sequencing, Dideoxy/Sanger",Leeds (molecular lab)
-130027416,11151729,130027416,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-01,1)authoriseddate,2017-10-15,2017-10-01,,0,,"FISH - Specific Probe,Immunochemistry",Birmingham (molecular lab)
-130027451,10416974,130027451,ERBB2 (HER2 / NEU),26,1,2,1,"b:normal,c:borderline",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-03-19,,,2016-03-19,,0,,Immunochemistry,Birmingham (molecular lab)
-130027453,10788758,130027453,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,2,"c.637C>T,c.833C>T",multiple,2019-08-06,1)authoriseddate,2019-08-29,2019-08-06,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027482,11823898,130027482,PDGFRA,59,1,2,1,"a:abnormal,a:abnormal",a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.2525A>T,c.2525A>T,2018-01-16,1)authoriseddate,2018-01-26,,p.(Gly262Val),1,p.(Gly262Val),"Sequencing, Dideoxy/Sanger",Newcastle (molecular lab)
-130027498,10600135,130027498,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-27,1)authoriseddate,2019-05-24,2019-05-27,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027515,10463222,130027515,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-04,1)authoriseddate,2019-04-08,2019-04-04,,0,,Immunochemistry,Birmingham (molecular lab)
-130027574,11556375,130027574,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.863dupA,c.863dupA,2019-07-18,,2019-08-12,2019-07-18,p.(Arg273His),1,p.(Arg273His),Immunochemistry,Birmingham (molecular lab)
-130027661,11633027,130027661,ERBB2 (HER2 / NEU),26,1,2,1,"a:abnormal,c:borderline",a:abnormal,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-02-25,,,2019-02-25,,0,,Immunochemistry,Birmingham (molecular lab)
-130027718,11529839,130027718,TP53,79,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-03-12,1)authoriseddate,2016-03-29,2016-03-12,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027729,10225555,130027729,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.743G>A,c.743G>A,2016-12-10,1)authoriseddate,2016-12-10,2016-12-10,p.(Tyr236Asn),1,p.(Tyr236Asn),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027752,10471331,130027752,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.742C>T,c.742C>T,2016-05-27,1)authoriseddate,2016-05-26,2016-05-27,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027779,10580095,130027779,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-20,3)receiveddate,2017-04-12,2017-11-20,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130027816,10135709,130027816,PDGFRA,59,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-20,1)authoriseddate,2019-06-19,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130027846,10516361,130027846,TP53,79,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-03-19,1)authoriseddate,2017-03-22,2017-03-19,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027868,11252548,130027868,TP53,79,1,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-24,1)authoriseddate,2019-05-05,2019-07-25,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130027945,11816197,130027945,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-11-05,,,,,0,,,
-130028018,11059388,130028018,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-17,3)receiveddate,,,,0,,,Unknown
-130028148,10640154,130028148,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-07,1)authoriseddate,2019-04-08,2021-05-19,,0,,,Pathology lab
-130028179,10947061,130028179,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-10,1)authoriseddate,,2018-10-10,,0,,,Unknown
-130028199,11568260,130028199,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-31,3)receiveddate,2019-06-12,2019-08-15,p.V600E,1,p.V600E,,Cambridge (molecular lab)
-130028223,10490920,130028223,BRAF,6,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-17,,,2019-10-17,,0,,Pyrosequencing,Unknown
-130028233,10247825,130028233,EGFR,24,1,1,1,a:abnormal,a:abnormal,0,,,,,,,1,c.183A>T,c.183A>T,2017-10-15,,,2017-10-15,p.Gly12Asp,1,p.Gly12Asp,,
-130028237,11965642,130028237,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-11,1)authoriseddate,,,,0,,,Bristol (molecular lab)
-130028281,10437363,130028281,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-12-01,1)authoriseddate,2019-09-14,,,0,,,Birmingham (molecular lab)
-130028324,11056896,130028324,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2019-04-03,,,2019-04-03,,0,,,
-130028327,11461082,130028327,SDHB,68,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-29,,,,,0,,,
-130028367,11002743,130028367,KRAS,47,2,3,2,c:borderline,c:borderline,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-07-07,3)receiveddate,2018-07-06,2018-07-07,p.V600X,1,p.V600X,Real-Time / Quantitative PCR (qPCR),Birmingham (molecular lab)
-130028505,11653163,130028505,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-06-15,,,,,0,,,
-130028607,11048846,130028607,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,1,c.1799T>A,c.1799T>A,2019-12-07,,,,,0,,,
-130028640,10845294,130028640,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-06,1)authoriseddate,2017-05-19,,,0,,,Birmingham (molecular lab)
-130028645,10766522,130028645,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-09,,2018-09-25,,,0,,,
-130028725,10520029,130028725,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-15,,,,,0,,,
-130028845,11015369,130028845,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-01-20,,,,,0,,,
-130028937,10890883,130028937,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-29,,,2018-10-29,,0,,,
-130028975,10771076,130028975,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-10,1)authoriseddate,2019-11-11,,,0,,,Manchester (molecular lab)
-130029073,11673692,130029073,SDHB,68,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-01,,,,,0,,,
-130029444,11625846,130029444,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-08,1)authoriseddate,2019-06-21,2019-06-08,,0,,,Nottingham (molecular lab)
-130029598,11322691,130029598,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-08-28,3)receiveddate,2016-08-31,,,0,,,Leeds (molecular lab)
-130029717,11794796,130029717,PMS1,3393,2,2,2,"a:abnormal,a:abnormal",a:abnormal,0,,,,,,,1,c.35G>A,c.35G>A,2017-09-19,,,2017-09-19,p.(Val600Glu),1,p.(Val600Glu),,
-130029805,10529223,130029805,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-04,,,,,0,,,
-130029842,10479185,130029842,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-02-21,,,,,0,,,
-130029980,10031870,130001838,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-13,,,,,0,,,
-130030094,11256654,130005037,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-06,,,2019-05-06,,0,,,
-130030308,10177498,130010391,BRAF,6,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-10-01,3)receiveddate,2018-09-30,2018-10-01,,0,,Roche COBAS,Unknown
-130030613,10396704,130018421,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-25,,2018-10-04,2018-11-25,,0,,,
-130030895,10256352,130028886,MGMT,51,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-19,,,2019-10-19,,0,,,
-130056524,10459336,130025793,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-04,1)authoriseddate,2018-09-24,2018-11-13,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130056526,10611483,130025795,PIK3CA,60,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.1634A>G,c.1634A>G,2019-07-20,1)authoriseddate,2019-08-07,2019-07-20,p.(Gln546Glu),1,p.(Gln546Glu),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130056541,10665033,130025813,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-01-17,1)authoriseddate,2018-02-03,2018-01-17,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056549,11692797,130025821,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-12-21,1)authoriseddate,2017-11-27,2018-01-11,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130056597,11087224,130025874,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-11,1)authoriseddate,2018-08-24,2018-08-11,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130056600,11462817,130025877,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-04,1)authoriseddate,2018-12-02,2018-11-04,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056622,11813144,130025900,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-29,1)authoriseddate,2019-05-05,2019-04-29,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056656,11277568,130025937,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-24,1)authoriseddate,2019-12-27,2019-12-24,,0,,Roche COBAS,Manchester (molecular lab)
-130056668,10969103,130025949,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-04-12,1)authoriseddate,2018-05-02,2018-04-12,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056687,11135601,130025969,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-26,1)authoriseddate,2019-08-17,2019-07-26,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056701,10126084,130025984,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-10,1)authoriseddate,2019-04-17,2019-04-10,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056704,10454990,130025987,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-27,1)authoriseddate,2016-09-25,2016-08-27,,0,,Roche COBAS,Royal Marsden (molecular lab)
-130056744,10061017,130026030,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-02-27,1)authoriseddate,2017-03-20,2017-02-27,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130056766,11999705,130026054,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-13,4)collecteddate,2019-10-09,2019-09-13,,0,,Immunochemistry,Pathology lab
-130056784,10439303,130026073,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-22,1)authoriseddate,2018-09-02,2018-08-22,,0,,Immunochemistry,Pathology lab
-130056795,10375658,130026086,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-07-25,3)receiveddate,2017-08-17,2017-07-25,,0,,Immunochemistry,Pathology lab
-130056852,11431604,130026152,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-29,3)receiveddate,2017-03-22,2018-03-29,,0,,Immunochemistry,Birmingham (molecular lab)
-130056904,11708812,130026208,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-18,3)receiveddate,2019-06-20,2019-06-18,,0,,Immunochemistry,Pathology lab
-130056911,10640844,130026217,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-08,1)authoriseddate,2019-07-01,2019-06-08,,0,,Immunochemistry,Pathology lab
-130056917,11262467,130026223,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-07,1)authoriseddate,2018-07-03,2019-01-02,,0,,Immunochemistry,Pathology lab
-130056920,10635446,130026226,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-04,4)collecteddate,2018-07-13,2018-07-21,,0,,Immunochemistry,Birmingham (molecular lab)
-130056941,10009723,130026251,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-21,1)authoriseddate,2019-06-18,2019-05-21,,0,,Immunochemistry,Unknown
-130057006,10685187,130026318,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-02,1)authoriseddate,2019-05-29,2019-05-02,,0,,Immunochemistry,Pathology lab
-130057010,10468815,130026322,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-22,3)receiveddate,2016-09-16,2016-10-02,,0,,Immunochemistry,Unknown
-130057038,11109339,130026351,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-12,3)receiveddate,2019-02-15,2019-03-12,,0,,Immunochemistry,Birmingham (molecular lab)
-130057039,11391048,130026352,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-02,3)receiveddate,2019-10-31,2019-12-02,,0,,Immunochemistry,Birmingham (molecular lab)
-130057040,11077236,130026353,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-21,1)authoriseddate,2019-04-06,2019-03-26,,0,,Immunochemistry,Unknown
-130057051,10027296,130026364,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-06,1)authoriseddate,2019-05-29,2019-05-20,,0,,Immunochemistry,Pathology lab
-130057061,11161735,130026375,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-07,3)receiveddate,2016-08-30,2016-08-07,,0,,Immunochemistry,Birmingham (molecular lab)
-130057082,10712047,130026396,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-02-13,1)authoriseddate,2017-02-20,2017-02-13,,0,,Immunochemistry,Pathology lab
-130057096,11527567,130026411,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-17,3)receiveddate,2018-06-06,2019-04-17,,0,,Immunochemistry,Birmingham (molecular lab)
-130057121,11367356,130026438,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-20,1)authoriseddate,2019-02-10,2019-06-20,,0,,Immunochemistry,Pathology lab
-130057135,11056012,130026452,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-27,1)authoriseddate,2018-03-25,2019-02-27,,0,,Immunochemistry,Pathology lab
-130057166,10000882,130026484,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-01-06,1)authoriseddate,2017-01-25,2017-01-06,,0,,Immunochemistry,Pathology lab
-130057203,11261104,130026521,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-06,3)receiveddate,2019-11-01,2019-10-06,,0,,Immunochemistry,Pathology lab
-130057270,11593363,130026590,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-15,1)authoriseddate,2018-08-13,2018-07-15,,0,,Immunochemistry,Unknown
-130057274,11954294,130026595,PMS2,3394,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2019-09-18,1)authoriseddate,2019-07-29,2019-09-18,,0,,Immunochemistry,Pathology lab
-130057320,11754258,130026643,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-17,3)receiveddate,2016-09-07,2016-08-17,,0,,Immunochemistry,Birmingham (molecular lab)
-130057326,10367373,130026649,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-06,4)collecteddate,2019-02-05,2019-04-06,,0,,Immunochemistry,Pathology lab
-130057329,11645375,130026652,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-09,3)receiveddate,2019-07-06,2019-12-09,,0,,Immunochemistry,Birmingham (molecular lab)
-130057351,11543310,130026674,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-01-27,1)authoriseddate,2018-02-24,2018-01-27,,0,,Immunochemistry,Unknown
-130057471,10393052,130026802,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-24,3)receiveddate,2018-12-09,2018-12-24,,0,,Immunochemistry,Pathology lab
-130057495,11116443,130026827,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-11,1)authoriseddate,2019-09-04,2019-08-11,,0,,Immunochemistry,Pathology lab
-130057530,10355077,130026863,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-27,3)receiveddate,2018-10-21,2018-09-27,,0,,Immunochemistry,Birmingham (molecular lab)
-130057541,11431082,130026875,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-31,4)collecteddate,2017-04-24,2017-10-31,,0,,Immunochemistry,Pathology lab
-130057549,10575442,130026884,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-18,1)authoriseddate,2019-08-31,2019-10-18,,0,,Immunochemistry,Pathology lab
-130057560,11973080,130026897,PMS2,3394,1,1,1,c:borderline,c:borderline,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-05,3)receiveddate,2017-12-12,2018-07-05,,0,,Immunochemistry,Birmingham (molecular lab)
-130057582,10751790,130026921,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-13,3)receiveddate,2018-09-02,2018-08-13,,0,,Immunochemistry,Birmingham (molecular lab)
-130057593,11491592,130026932,PMS2,3394,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2016-10-22,1)authoriseddate,2016-07-04,2016-10-22,,0,,Immunochemistry,Pathology lab
-130057595,10559335,130026934,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-29,1)authoriseddate,2019-11-05,2019-10-29,,0,,Immunochemistry,Pathology lab
-130057672,11056453,130027021,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-16,1)authoriseddate,2018-07-09,2019-06-16,,0,,Immunochemistry,Unknown
-130057673,10328016,130027023,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-30,1)authoriseddate,2016-07-20,2018-03-30,,0,,Immunochemistry,Unknown
-130057714,11099187,130027068,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-10,1)authoriseddate,2017-04-09,2017-04-11,,0,,Immunochemistry,Unknown
-130057794,10932707,130027159,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-18,3)receiveddate,2018-09-02,2019-08-18,,0,,Immunochemistry,Birmingham (molecular lab)
-130057811,10374235,130027177,PMS2,3394,1,1,1,g:unknown/null,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-09-19,4)collecteddate,2017-09-02,2017-09-19,,0,,Immunochemistry,Unknown
-130057816,11955775,130027182,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,,1)authoriseddate,,,,0,,Immunochemistry,Unknown
-130057857,11236970,130027227,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-30,1)authoriseddate,2016-11-27,2016-10-30,,0,,Immunochemistry,Leeds (molecular lab)
-130057868,11783740,130027238,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-06,3)receiveddate,2018-11-19,2018-12-06,,0,,Immunochemistry,Birmingham (molecular lab)
-130057876,10394875,130027247,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-16,1)authoriseddate,2019-09-29,2019-10-16,,0,,Immunochemistry,Pathology lab
-130057884,10859343,130027256,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-22,1)authoriseddate,2018-12-07,2018-12-22,,0,,Immunochemistry,Unknown
-130057901,11667370,130027274,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-05-05,1)authoriseddate,2018-05-17,2018-05-05,,0,,Immunochemistry,Pathology lab
-130057951,10209495,130027329,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-09,1)authoriseddate,2019-03-06,2019-04-09,,0,,Immunochemistry,Unknown
-130057959,11944018,130027337,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-18,4)collecteddate,2020-01-15,2019-12-18,,0,,Immunochemistry,Pathology lab
-130057992,11991191,130027370,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-08,3)receiveddate,2019-07-23,2019-07-08,,0,,Immunochemistry,Birmingham (molecular lab)
-130058001,10244966,130027380,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-08,1)authoriseddate,2018-11-06,2019-05-08,,0,,Immunochemistry,Birmingham (molecular lab)
-130058004,11047742,130027383,PMS2,3394,1,1,1,"a:abnormal,a:abnormal",a:abnormal,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2019-07-31,4)collecteddate,2019-07-17,2019-07-31,,0,,Immunochemistry,Pathology lab
-130058023,10281472,130027403,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-06-23,3)receiveddate,2016-05-10,2016-06-23,,0,,Immunochemistry,Birmingham (molecular lab)
-130058033,11151729,130027416,PMS2,3394,1,2,1,"g:unknown/null,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,ca:borderline_a_under_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-03,1)authoriseddate,2017-11-05,2017-11-03,,0,,Immunochemistry,Pathology lab
-130058067,10416974,130027451,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-04-03,3)receiveddate,2016-04-24,2016-04-03,,0,,Immunochemistry,Birmingham (molecular lab)
-130058069,10788758,130027453,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-20,1)authoriseddate,2019-09-14,2019-08-20,,0,,Immunochemistry,Pathology lab
-130058096,11823898,130027482,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-20,3)receiveddate,2018-03-15,2018-02-20,,0,,Immunochemistry,Birmingham (molecular lab)
-130058112,10600135,130027498,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-27,1)authoriseddate,2019-04-21,2019-05-27,,0,,Unknown,Pathology lab
-130058127,10971266,130027514,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-03-24,1)authoriseddate,2017-04-21,2017-07-27,,0,,Immunochemistry,Unknown
-130058128,10463222,130027515,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-08,1)authoriseddate,2019-04-26,2019-04-08,,0,,Immunochemistry,Unknown
-130058186,11556375,130027574,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-02,1)authoriseddate,2019-08-25,2019-10-02,,0,,Immunochemistry,Unknown
-130058325,10225555,130027729,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-12-26,,,,,0,,"Sequencing, Next Generation (NGS)",
-130058347,10471331,130027752,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-07-26,,,2016-07-26,,0,,"Sequencing, Next Generation (NGS)",
-130058405,10135709,130027816,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-20,,2019-07-16,2019-07-12,,0,,"Sequencing, Next Generation (NGS)",
-130058433,10516361,130027846,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-04-11,,,,,0,,,
-130058693,10640154,130028148,TP53,79,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-07,,,2019-04-07,,0,,"Sequencing, Next Generation (NGS)",
-130058720,10947061,130028179,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-22,,2018-04-01,2018-10-22,,0,,"Sequencing, Next Generation (NGS)",
-130058988,10895361,130028495,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-03-02,,,,,0,,,
-130059009,11832629,130028517,KIT,44,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-03,,,,,0,,"Sequencing, Next Generation (NGS)",
-130059080,11048846,130028607,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-07,,,,,0,,Multiple methods,
-130059185,10520029,130028725,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-12,,,2019-07-12,,0,,,
-130059282,11015369,130028845,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-01-28,,,,,0,,,
-130059680,11420915,130029296,KIT,44,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.1673_1674insTCC,c.1673_1674insTCC,2017-04-17,1)authoriseddate,,,p.Trp557_Lys558del,1,p.Trp557_Lys558del,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130059708,11341047,130029327,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-09,,,,,0,,,
-130059756,11546440,130029384,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-18,,2018-09-05,2018-08-18,,0,,"Sequencing, Dideoxy/Sanger",
-130059808,11625846,130029444,KIT,44,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-08,1)authoriseddate,2019-05-21,,p.Gln556_Val560del,1,p.Gln556_Val560del,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130060179,10473467,130029875,PTEN,62,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-28,1)authoriseddate,2019-03-28,2019-02-28,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130060219,10042131,130000387,POLD1,3408,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-14,1)authoriseddate,2019-04-17,2019-05-14,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130060272,10031870,130001838,APC,358,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-13,1)authoriseddate,2019-03-04,2018-12-13,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130060293,11166676,130002597,PDGFRA,59,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-12-29,1)authoriseddate,2020-01-23,2019-12-29,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130060369,11256654,130005037,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-06,,,2019-05-06,,0,,,
-130060902,10517784,130022572,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-05,,2019-05-11,,,0,,,
-130086387,10932707,130027159,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-18,1)authoriseddate,2019-08-22,2019-08-18,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130086408,11955775,130027182,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086449,11236970,130027227,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-30,1)authoriseddate,2016-11-15,2016-12-18,,0,,Other,Royal Marsden (molecular lab)
-130086460,11783740,130027238,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-12,1)authoriseddate,2018-07-23,2018-12-12,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086468,10394875,130027247,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-16,1)authoriseddate,2019-10-26,2019-10-16,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086476,10859343,130027256,PIK3CA,60,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-22,1)authoriseddate,2018-11-07,2019-01-22,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086492,11667370,130027274,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-05-05,1)authoriseddate,2018-02-04,2018-05-05,,0,,Other,Royal Marsden (molecular lab)
-130086542,10209495,130027329,PIK3CA,60,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.1624G>A,c.1624G>A,2019-04-09,1)authoriseddate,2019-04-05,2019-04-09,p.(Glu542Lys),1,p.(Glu542Lys),Other,Manchester (molecular lab)
-130086583,11991191,130027370,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-31,1)authoriseddate,2019-06-06,2019-07-31,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086592,10244966,130027380,PIK3CA,60,1,3,1,"b:normal,b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-08,1)authoriseddate,2019-01-30,2019-05-08,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086614,10281472,130027403,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-06-23,1)authoriseddate,2016-05-06,2016-06-23,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130086624,11151729,130027416,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-03,1)authoriseddate,2017-10-15,2017-11-03,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086658,10416974,130027451,PIK3CA,60,1,1,1,e:failed,e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-04-13,1)authoriseddate,2016-05-07,2016-04-13,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086660,10788758,130027453,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-13,1)authoriseddate,2019-10-07,2019-09-13,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130086687,11823898,130027482,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-28,1)authoriseddate,2018-03-27,2018-02-28,,0,,Immunochemistry,Birmingham (molecular lab)
-130086703,10600135,130027498,PMS2,3394,1,1,1,e:failed,e:failed,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2019-06-01,1)authoriseddate,2019-06-28,2019-06-01,,0,,Immunochemistry,Pathology lab
-130086718,10971266,130027514,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-14,3)receiveddate,2017-02-06,2017-04-14,,0,,Immunochemistry,Birmingham (molecular lab)
-130086719,10463222,130027515,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-13,1)authoriseddate,2019-05-11,2019-04-13,,0,,Immunochemistry,Birmingham (molecular lab)
-130086777,11556375,130027574,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-10,1)authoriseddate,2019-12-16,2019-12-10,,0,,Immunochemistry,Pathology lab
-130086869,11529839,130027718,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-05-16,1)authoriseddate,2016-06-04,2016-05-16,,0,,Immunochemistry,Unknown
-130086878,10225555,130027729,PMS2,3394,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-02-22,1)authoriseddate,2016-12-31,2017-02-22,,0,,Immunochemistry,Pathology lab
-130086897,10471331,130027752,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-12-06,4)collecteddate,2016-06-11,2016-12-06,,0,,Immunochemistry,Pathology lab
-130087234,10947061,130028179,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.536A>T,c.536A>T,2018-10-27,1)authoriseddate,2018-08-28,2018-10-27,p.(Arg273Cys),1,p.(Arg273Cys),"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130087243,10710207,130028194,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.856G>A,c.856G>A,2019-02-11,1)authoriseddate,2018-08-18,2019-02-11,"p.(Pro152ArgfsTer18) ,p.(Pro152Leu)",2,multiple,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130087559,10520029,130028725,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-11,,2019-07-21,,,0,,"Sequencing, Next Generation (NGS)",
-130087755,11673692,130029073,KIT,44,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.1504_1509dup,c.1504_1509dup,2019-04-22,,,,"p.(Ala502Tyr503dup),p.(Ala502_Tyr503dup)",2,multiple,,
-130088333,11166676,130002597,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-29,1)authoriseddate,,2020-01-13,,0,,Immunochemistry,Birmingham (molecular lab)
-130088407,11989927,130006112,POLD1,3408,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-19,1)authoriseddate,2016-11-14,2016-10-19,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130111349,11527567,130026411,PIK3CA,60,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-23,1)authoriseddate,2019-06-06,2019-08-23,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130111396,10000882,130026484,PIK3CA,60,1,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-01-06,1)authoriseddate,2016-12-29,2017-01-06,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
-130111421,11261104,130026521,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-13,1)authoriseddate,2019-12-01,2019-11-13,,0,,Immunochemistry,Pathology lab
-130111469,11593363,130026590,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-19,1)authoriseddate,2018-08-17,2018-07-19,,0,,Immunochemistry,Pathology lab
-130111472,11954294,130026595,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-30,1)authoriseddate,2019-08-21,2019-11-30,,0,,Immunochemistry,Pathology lab
-130111507,10367373,130026649,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-28,3)receiveddate,2019-08-21,2019-07-28,,0,,Immunochemistry,Unknown
-130111971,10281472,130027403,TP53,79,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,2,"c.454_466del,c.577C>T",multiple,2016-07-04,1)authoriseddate,,,p.(Phe109Ser),1,p.(Phe109Ser),,
-130112044,11823898,130027482,TP53,79,1,2,1,"a:abnormal,b:normal",a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.524G>A,c.524G>A,2018-02-28,,2018-02-05,,p.(Arg175His),1,p.(Arg175His),"Sequencing, Next Generation (NGS)",
-130112060,10600135,130027498,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-15,,2019-05-01,2019-06-15,,0,,,
-130112442,10108663,130028151,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-05,1)authoriseddate,2019-03-16,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130112462,10947061,130028179,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-17,,,2018-11-17,,0,,,
-130113179,10473467,130029875,PDGFRA,59,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-02-28,,,2019-02-28,,0,,,
-130113205,10042131,130000387,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-27,3)receiveddate,2019-06-05,2020-02-10,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
-130113242,11006574,130002042,PTEN,62,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-06-04,1)authoriseddate,,2018-06-04,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130113504,10396704,130018421,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-27,1)authoriseddate,2018-12-12,,,0,,,
-130129102,11491592,130026932,KIT,44,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-01-21,,,,,0,,,
-130129859,11673692,130029073,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-26,3)receiveddate,2019-06-01,2019-06-26,,0,,,Birmingham (molecular lab)
-130129934,11420915,130029296,PDGFRA,59,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2017-05-22,1)authoriseddate,2016-06-08,2017-05-22,,0,,"Sequencing, Dideoxy/Sanger",Royal Marsden (molecular lab)
-130130108,10473467,130029875,BMPR1A,577,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-11,,,2019-03-11,,0,,,Leeds (molecular lab)
-130130152,11006574,130002042,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-04,,2018-05-12,,,0,,,
-130141452,10710207,130028194,PTEN,62,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-28,,2018-12-01,,,0,,Immunochemistry,
-130141497,11002743,130028367,APC,358,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-20,1)authoriseddate,2019-06-04,2019-05-20,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130141563,10520029,130028725,CTNNB1,22,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-07,1)authoriseddate,,2019-10-07,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130141679,11420915,130029296,BMPR1A,577,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-25,,,2017-05-25,,0,,,
-130149696,10971266,130027514,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-24,3)receiveddate,,2017-10-24,,0,,Immunochemistry,Birmingham (molecular lab)
-130155801,10710207,130028194,CTNNB1,22,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-08-10,1)authoriseddate,2019-08-26,2019-08-10,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
-130155987,11006574,130002042,EWSR1,28,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-28,,,,,0,,,
-140020359,11057901,140017018,ROS1,67,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-06-01,,2018-02-23,,,0,,,
-200007075,10450343,200001397,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-03-04,3)receiveddate,2017-02-28,2017-03-04,,0,,,
-200007390,11670790,200001050,NRAS,56,1,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-04-22,,,2018-04-22,,0,,"Sequencing, Dideoxy/Sanger",Royal Marsden (molecular lab)
-200012323,10450343,200001397,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-04,1)authoriseddate,,,,0,,,Royal Marsden (molecular lab)
-230002497,10394520,230000097,PMS2,3394,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2019-09-27,,,2019-09-27,,0,,Immunochemistry,Unknown
-240002879,10629442,240000877,CTNNB1,22,1,3,1,"e:failed,e:failed,e:failed",e:failed,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-05-01,1)authoriseddate,2018-04-27,2018-05-01,,0,,Pyrosequencing,Royal Marsden (molecular lab)
+10037122,10148869,10209468,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-06,,,,,0,,,
+10037178,10303707,10214003,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-06-22,,,,,0,,,
+10037214,10481753,10218005,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-06,,,,,0,,,
+10037216,11968506,10218151,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-28,,,,,0,,,
+10037233,10156863,10220369,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-30,,,,,0,,,
+10037236,10237521,10220950,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-02,,,,,0,,,
+10037271,11352192,10224324,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-30,,,,,0,,,
+10037435,11199001,10238194,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-28,,,,,0,,,
+10037444,11244656,10239036,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-25,,,,,0,,,
+10037456,11297596,10240495,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-06,,,,,0,,,
+10057924,11784164,10137589,CCND1,13,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-13,1)authoriseddate,,,,0,,,Birmingham (molecular lab)
+10057927,10779761,10144512,CCND2,14,1,2,1,"e:failed,a:abnormal",a:abnormal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-13,,,,,0,,,
+10057938,11942836,10171102,BCL2,537,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-08,2)requesteddate,,,,0,,Immunochemistry,Cambridge (molecular lab)
+10057941,10350762,10172452,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-01-14,,,,,0,,,
+20086864,10158868,20063247,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-18,,,,,0,,,
+20087033,11016228,20080378,SDHB,68,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-10,,,2018-12-10,,0,,,
+20087045,10525659,20083911,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-01,,,,,0,,,
+20087096,10039217,20095656,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-26,,,,,0,,,
+20087261,11548724,20113533,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-11,,,,,0,,,
+20169639,10204949,20065637,ROS1,67,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,1,c.35G>A,c.35G>A,2019-09-04,3)receiveddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+30091450,10896680,30145536,KRAS,47,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-01-03,,,,,0,,,
+30091457,11372870,30145846,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-06,,,,,0,,,
+30091641,10798902,30156992,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-21,,,,,0,,,
+40203853,10782718,40145340,BRAF,6,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-03,3)receiveddate,2019-03-08,,,0,,Roche COBAS,Birmingham (molecular lab)
+40316969,11790910,40140219,BRAF,6,1,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,,3)receiveddate,,,,0,,Pyrosequencing,Birmingham (molecular lab)
+50017473,11249395,50127631,PDGFRA,59,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-10,,,,,0,,,
+50017675,11352857,50133207,NRAS,56,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-07,,,,,0,,,
+50017696,11274490,50133597,NRAS,56,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-12-12,,,2016-12-12,,0,,,
+50017758,11048991,50135095,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-15,,,,,0,,Roche COBAS,Pathology lab
+50027996,10871356,50130779,MSH6,2808,1,1,1,a:abnormal,a:abnormal,0,,,,,,,1,c.1799T>A,c.1799T>A,2016-09-28,1)authoriseddate,2016-10-16,,p.(Gly13Asp),1,p.(Gly13Asp),Immunochemistry,Cambridge (molecular lab)
+50028020,11352857,50133207,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-01,1)authoriseddate,,2019-11-01,,0,,Immunochemistry,Royal Marsden (molecular lab)
+60044833,11614944,60083649,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-12-21,,,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
+60045009,11897423,60101022,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2016-10-25,,,,,0,,,
+60045044,11307072,60102562,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-04-30,,,,,0,,,
+60045125,11370209,60106302,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-19,1)authoriseddate,2017-05-10,,,0,,ARMS / Allele-specific PCR,Liverpool (molecular lab)
+60045154,11663112,60107716,EGFR,24,2,2,2,a:abnormal,a:abnormal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-09,1)authoriseddate,2017-04-29,,,0,,Real-Time / Quantitative PCR (qPCR),Liverpool (molecular lab)
+60066737,10689262,60076841,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-06-11,,,,,0,,,
+60066793,10614794,60085062,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-17,,,,,0,,,
+60066826,11120989,60091448,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-31,1)authoriseddate,2018-04-05,,,0,,Roche COBAS,Birmingham (molecular lab)
+60066915,11307072,60102562,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-05-29,,2016-04-26,2016-05-29,,0,,"Sequencing, Next Generation (NGS)",Birmingham (molecular lab)
+60078753,10685781,60081722,KRAS,47,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2017-03-26,1)authoriseddate,2016-10-15,,,0,,,
+60078786,11428264,60089860,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-30,,,,,0,,,
+60078856,11307072,60102562,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-25,,,,,0,,,
+60084775,11120989,60091448,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-15,,,,,0,,,
+60087852,11120989,60091448,BRAF,6,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2018-11-21,3)receiveddate,2018-05-20,,,0,,"Sequencing, Next Generation (NGS)",
+70067625,10581144,70031186,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-20,3)receiveddate,,,,0,,,
+70067645,10766354,70031829,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-15,,,2019-05-15,,0,,,Pathology lab
+70067938,10685447,70041349,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-02,,,,,0,,,
+70068390,10555456,70051351,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-14,,,,,0,,,
+70068624,10223665,70055757,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-02-17,,,,,0,,,
+70113545,10378991,70051252,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-11-11,,,,,0,,,
+70142837,11799221,70037835,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-13,,,,,0,,,
+70142917,11922516,70042915,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-09,,,,,0,,,
+70162534,11745575,70031163,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-04-17,,,,,0,,Immunochemistry,
+70162554,10970188,70032408,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-08,,,,,0,,,
+70175843,10970188,70032408,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-09,,2017-11-13,,,0,,"Sequencing, Next Generation (NGS)",
+70190771,10055912,70030704,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-17,,,,,0,,"Sequencing, Next Generation (NGS)",
+70190817,10685447,70041349,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-03,,,,,0,,,
+80021908,10481456,80002640,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2017-06-15,,,,,0,,,
+80021918,11083121,80003062,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-10,,,,,0,,,
+80021928,11864853,80003499,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-02-02,,,,,0,,,
+80021933,10186155,80003709,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-21,,,,,0,,,
+80021947,11484044,80004330,CD274 (PD-L1),4842,1,1,1,c:borderline,c:borderline,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-16,4)collecteddate,,,,0,,Immunochemistry,Unknown
+80021971,11053327,80005209,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-31,,,2017-07-31,,0,,,
+80021993,11025073,80005963,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-08-26,,,2016-09-18,,0,,Immunochemistry,
+80022016,10722394,80006686,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-03,,,,,0,,,
+80022022,11740518,80006846,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-11-03,3)receiveddate,,,,0,,Real-Time / Quantitative PCR (qPCR),Birmingham (molecular lab)
+80022040,11860719,80007281,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-04-21,,,,,0,,,
+80022060,11892137,80007893,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-02-16,2)requesteddate,,,,0,,Roche COBAS,Pathology lab
+80022071,11007946,80008294,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-09,3)receiveddate,,,,0,,Real-Time / Quantitative PCR (qPCR),Leeds (molecular lab)
+80022100,11228692,80009321,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-05,,,,,0,,,
+80022118,11163294,80009840,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-04-12,,,,,0,,,
+80022124,10473877,80009927,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-24,3)receiveddate,,,,0,,Immunochemistry,Sheffield (molecular lab)
+80022134,11974706,80010243,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-10,3)receiveddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+80022143,10300406,80010622,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-08,,,,,0,,,
+80022160,11801702,80011313,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-28,,,,,0,,,
+80022182,11746493,80012083,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-03,2)requesteddate,,,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Pathology lab
+80022188,11032575,80012308,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-26,,,,,0,,,
+80022192,11403160,80012431,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-06,1)authoriseddate,,,,0,,Roche COBAS,Unknown
+80022253,11840664,80014497,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-31,,,2017-07-31,,0,,,
+80022260,10743027,80014736,EGFR,24,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-02-28,3)receiveddate,,2019-02-28,,0,,Roche COBAS,Cambridge (molecular lab)
+80022277,11527097,80015287,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-31,3)receiveddate,,,,0,,Roche COBAS,Cambridge (molecular lab)
+80022280,10589456,80015476,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-23,,,,,0,,,
+80022281,11873395,80015493,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-18,3)receiveddate,,,,0,,Roche COBAS,Newcastle (molecular lab)
+80022306,10334362,80016753,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-07,,,,,0,,,
+80022309,11578303,80016874,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-19,3)receiveddate,,2019-11-19,,0,,Roche COBAS,Nottingham (molecular lab)
+80022317,11816053,80017075,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-07,,,,,0,,,
+80022343,11389907,80017922,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-09-06,3)receiveddate,,,,0,,Roche COBAS,Birmingham (molecular lab)
+80022347,11955610,80018013,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-27,1)authoriseddate,2017-11-24,,,0,,Roche COBAS,Unknown
+80022351,11172827,80018285,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-02,4)collecteddate,,,,0,,"Sequencing, Dideoxy/Sanger",Pathology lab
+80022375,10168383,80019467,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-02-19,,,,,0,,,
+80022421,10332609,80021329,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-02-19,,,,,0,,,
+80022443,11847990,80022430,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-06-14,1)authoriseddate,,,,0,,Roche COBAS,Royal Marsden (molecular lab)
+80022457,10514587,80022878,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-03-23,,,,,0,,,
+80022476,11271113,80023593,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-08-03,3)receiveddate,,,,0,,Roche COBAS,Sheffield (molecular lab)
+80022487,11410242,80023956,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-13,3)receiveddate,,2018-04-13,,0,,Roche COBAS,Birmingham (molecular lab)
+80022491,10166391,80024113,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-28,1)authoriseddate,,,,0,,Roche COBAS,Nottingham (molecular lab)
+80022538,10458905,80025964,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-19,,,,,0,,,
+80022540,10675211,80025991,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-28,,,,,0,,,
+80022548,11510813,80026192,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-04,3)receiveddate,,2019-01-04,,0,,Roche COBAS,Newcastle (molecular lab)
+80023947,10113278,80002024,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-08-15,,,,,0,,,
+80023960,11263609,80008294,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-31,,,,,0,,,
+80023974,11226566,80012666,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-05-28,3)receiveddate,,,,0,,Roche COBAS,Birmingham (molecular lab)
+80024172,11318341,80009109,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-08,,2018-05-18,,,0,,,
+80035182,10833430,80000043,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-02,,,,,0,,,
+80035183,11023649,80000239,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-09-04,,,2016-09-04,,0,,,
+80035185,11983685,80000297,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-05-19,,,,,0,,,
+80035188,11945446,80000623,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-05-24,,,,,0,,,
+80035189,10870426,80000673,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-16,,,,,0,,,
+80035190,11539777,80000801,ALK,3,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-04-03,,,,,0,,,
+80035192,11529279,80000843,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-02,,,,,0,,,
+80035193,10561679,80000909,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-01,,,,,0,,,
+80035196,10065735,80001366,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-21,,,,,0,,,
+80035204,11189276,80001868,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-13,,,2018-01-13,,0,,,
+80035210,11173694,80002329,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-30,,,,,0,,,
+80035212,11315008,80002765,MSH2,2804,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2016-10-08,,,,,0,,,
+80035216,10850046,80002946,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-06,,,2016-10-06,,0,,,
+80035220,11915426,80003102,EGFR,24,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-01-07,,,2018-01-07,,0,,,
+80035221,11265011,80003136,CCND1,13,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2018-10-16,,,2018-10-16,,0,,,
+80035223,10097260,80003376,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2017-04-18,,,,,0,,,
+80035228,10186155,80003709,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-22,,,,,0,,,
+80035233,10207946,80004013,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-21,,,2018-08-21,,0,,,
+80035234,10136008,80004043,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-09,,,2019-11-09,,0,,,
+80035238,11406535,80004301,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-20,,,2019-06-20,,0,,,
+80035240,11754445,80004471,ALK,3,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-04-19,,,,,0,,,
+80035241,10640362,80004472,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-02-26,,,,,0,,,
+80035244,10241494,80004683,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-17,,,2018-06-17,,0,,,
+80035246,10104629,80004709,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-29,,,,,0,,,
+80035251,11590027,80005076,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-13,,,,,0,,,
+80035257,10992541,80005296,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-21,,,2019-04-21,,0,,,
+80035264,10250039,80005718,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-07,,,,,0,,,
+80035269,10280757,80006163,MGMT,51,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2018-11-20,,,,,0,,,
+80035270,10320180,80006199,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-27,,2017-03-01,,,0,,,
+80035272,10297649,80006261,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-26,,,,,0,,,
+80035275,10790934,80006401,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-18,,,,,0,,,
+80035278,11789534,80006497,MSH2,2804,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-02,,,,,0,,,
+80035282,10722394,80006686,MSH2,2804,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-10-03,,,,,0,,,
+80035287,11596606,80006907,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-17,,,,,0,,,
+80035427,11222620,80014676,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-13,,,,,0,,,
+80035563,10601185,80022787,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-13,,,,,0,,,
+80035611,11662098,80025509,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-31,,,,,0,,,
+80036541,11407403,80001245,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-16,,,,,0,,,
+80036558,11933448,80010120,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-16,,,,,0,,,
+80043021,11489935,80007300,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-28,,,,,0,,,
+80043029,11892137,80007893,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-08,,,,,0,,,
+80043031,11007946,80008294,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-02,,,2019-05-02,,0,,,
+80043038,11378275,80008748,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-10,,,,,0,,,
+80043043,11228692,80009321,CIC,904,1,2,1,"b:normal,b:normal",b:normal,0,,,,,,,0,,,2019-04-04,,,,,0,,,
+80043044,10098671,80009446,EGFR,24,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-02,,,,,0,,,
+80043046,10191153,80009737,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-22,,,,,0,,,
+80043049,10864541,80009868,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-21,,,,,0,,,
+80043051,10473877,80009927,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-16,,,2019-05-16,,0,,,
+80043056,10253909,80010307,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-15,,,,,0,,,
+80043057,10770638,80010456,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-13,,,,,0,,,
+80043058,10500518,80010525,HIST1H3B,37,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-16,,,,,0,,,
+80043061,11895364,80010920,EGFR,24,1,2,1,"b:normal,b:normal",b:normal,0,,,,,,,0,,,2017-09-10,,,2017-09-10,,0,,,
+80043066,11537217,80011126,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-07,,,,,0,,,
+80043067,10360509,80011329,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-10,,,,,0,,,
+80043068,11453401,80011759,ALK,3,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2018-02-09,,,,,0,,,
+80043072,11456206,80012098,CD274 (PD-L1),4842,4,4,3,"b:normal,c:borderline,c:borderline,c:borderline",b:normal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2017-03-09,,,,,0,,,
+80043075,11032575,80012308,ALK,3,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-08-29,,,,,0,,,
+80043077,11585516,80012537,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-15,,,,,0,,,
+80043078,10836709,80012614,BRAF,6,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2017-11-23,,,,,0,,,
+80043080,10463057,80013013,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-20,,,,,0,,,
+80043085,10070997,80013347,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-26,,,,,0,,,
+80043088,11788288,80013531,KRAS,47,1,2,1,"b:normal,b:normal",b:normal,0,,,,,,,0,,,2016-12-08,,,,,0,,,
+80043089,10929651,80013587,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-26,,,,,0,,,
+80043093,10907851,80014001,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-19,,,,,0,,,
+80043094,10576434,80014008,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-13,,,2017-11-13,,0,,,
+80043097,10115475,80014234,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-16,,,,,0,,,
+80043099,11894860,80014349,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-02,,,,,0,,,
+80043102,11582569,80014544,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-25,,,,,0,,,
+80043104,11222620,80014676,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-13,,,,,0,,,
+80043109,11059586,80015039,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-05,,,2019-05-05,,0,,,
+80043110,10669635,80015218,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-29,,,,,0,,,
+80043113,10112206,80015563,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-17,,,2017-12-17,,0,,,
+80043118,11238578,80016210,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-11,,,,,0,,,
+80043122,10765158,80016731,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-27,,,,,0,,,
+80043124,11578303,80016874,BRAF,6,1,1,1,e:failed,e:failed,0,,,,,,,0,,,2019-12-23,,,,,0,,,
+80043126,11164034,80016912,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-13,,,,,0,,,
+80043127,10505664,80016964,MLH1,2744,2,2,1,"f:not_tested,b:normal",b:normal,0,,,,,,,0,,,2018-07-08,,,,,0,,,
+80043129,10193867,80017082,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-19,,,,,0,,,
+80043134,10598172,80017382,MSH6,2808,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2018-05-21,,,,,0,,,
+80043135,10899680,80017388,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-23,,,,,0,,,
+80043144,11955610,80018013,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-21,,,,,0,,,
+80043145,10870608,80018159,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-27,,,2018-04-27,,0,,,
+80043146,11426348,80018162,MSH2,2804,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2019-12-29,,,,,0,,,
+80043153,11596663,80018742,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-11-20,,,,,0,,,
+80043154,10928946,80018822,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-25,,,,,0,,,
+80043155,10794564,80018849,FLT3,1609,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-13,,,2019-10-13,,0,,,
+80043159,10259939,80019054,MSH6,2808,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-01-27,,,2017-01-27,,0,,,
+80043160,10018187,80019326,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-08-27,,,,,0,,,
+80043163,10495363,80019721,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-04,,,,,0,,,
+80043165,10998490,80019791,MSH6,2808,1,2,1,"e:failed,b:normal",b:normal,0,,,,,,,0,,,2019-08-21,,,,,0,,,
+80043186,11561160,80021760,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-06,,,,,0,,,
+80043943,10098849,80006411,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-14,,,2019-01-14,,0,,,
+80047476,11258409,80020870,ROS1,67,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2019-05-01,,,,,0,,,
+80047485,10899361,80022042,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-26,,,2017-09-26,,0,,,
+80047487,10596492,80022217,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-10-07,,,2017-10-07,,0,,,
+80047495,10088970,80023877,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-26,,,,,0,,,
+80047498,10166391,80024113,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-13,,,,,0,,,
+80047510,11662098,80025509,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-25,,,,,0,,,
+80047518,10502406,80026242,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-17,,,,,0,,,
+80047520,10277260,80026628,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-26,,,,,0,,,
+80047522,10497797,80026879,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-08-24,,,,,0,,,
+100046040,11690874,100002028,NRAS,56,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-08-31,1)authoriseddate,,,,0,,,
+100046061,10902978,100003088,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-13,1)authoriseddate,,,,0,,,
+100046577,11753423,100025841,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-22,,,,,0,,,
+100046708,11715317,100032312,TSC2,82,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-10-04,3)receiveddate,,,,0,,"Sequencing, Next Generation (NGS)",Birmingham (molecular lab)
+100047035,11343076,100016287,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-30,3)receiveddate,,,,0,,"Sequencing, Next Generation (NGS)",Leeds (molecular lab)
+100087561,10710608,100010011,STK11,76,2,2,2,"e:failed,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-02,1)authoriseddate,,2019-05-02,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+100087602,10444608,100012474,TSC1,81,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-27,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+100087844,11424013,100024591,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-06-11,,2018-05-13,,,0,,,Leeds (molecular lab)
+100087869,11753423,100025841,PDGFRA,59,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-06,1)authoriseddate,,,,0,,,Manchester (molecular lab)
+100087990,11715317,100032312,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-10-04,,2017-07-10,,,0,,,
+100119625,10710608,100010011,NTRK3,3111,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-02,,,,,0,,"Sequencing, Dideoxy/Sanger",
+100119664,10444608,100012474,TP53,79,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-24,,,,,0,,,
+100119774,11249063,100018861,NTRK2,3110,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-06,1)authoriseddate,,2019-06-06,,0,,,Pathology lab
+100119941,10060898,100030037,AR,391,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-04-18,,2017-02-14,,,0,,"Sequencing, Next Generation (NGS)",
+100141924,10710608,100010011,MAP2K1 (MEK1),48,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-02,1)authoriseddate,,,,0,,,Birmingham (molecular lab)
+100142249,11326708,100039279,NTRK2,3110,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-12-08,,2017-10-10,,,0,,,
+100156937,11424013,100024591,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-23,,,,,0,,,
+100166881,11643188,100032095,NTRK2,3110,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-07,,,,,0,,,
+110004718,11155544,110024973,PMS2,3394,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-01-22,3)receiveddate,,,,0,,Pyrosequencing,Royal Marsden (molecular lab)
+110004854,10291219,110030826,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-21,,,,,0,,,
+110007498,10961184,110029583,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-01,,,,,0,,,
+120007784,10704405,120000446,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-29,,,,,0,,,
+120007980,10668853,120007971,NRAS,56,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-11-13,,,,,0,,,
+120008154,11439702,120014540,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-12,,2018-09-12,2018-09-12,,0,,,
+120011725,10133972,120006742,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-09,1)authoriseddate,,,,0,,Immunochemistry,Bristol (molecular lab)
+120011744,11638722,120008171,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-06-08,,,,,0,,,
+120011802,11215663,120012942,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-06,,,,,0,,,
+120011902,11998330,120020153,TERT,77,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-07,,,,,0,,,
+120011948,11691113,120022418,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-02,,,,,0,,,
+120012172,10398426,120041486,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-29,,,,,0,,,
+120013670,10361060,120034961,BCL2,537,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-08-17,,,,,0,,,
+130029918,10446320,130000268,MLH1,2744,1,1,1,,g:unknown/null,0,n:not_applicable_null,b:normal_epi,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-05,,2019-01-19,2019-01-05,,0,,Immunochemistry,Bristol (molecular lab)
+130029924,10659154,130000430,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-19,,,,,0,,,
+130029935,11440854,130000672,SDHB,68,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,1,c.436G>A,c.436G>A,2019-05-30,,,2019-05-30,,0,,,
+130029962,10333834,130001392,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-06,2)requesteddate,,,,0,,,Pathology lab
+130029981,10494553,130001864,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-10,,,2019-04-10,,0,,,
+130029987,10651896,130002063,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-10-04,3)receiveddate,,2016-10-04,,0,,,Manchester (molecular lab)
+130030024,10934432,130003086,BRAF,6,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-13,2)requesteddate,2018-07-22,,p.(Gly12Asp),1,p.(Gly12Asp),Pyrosequencing,Birmingham (molecular lab)
+130030027,11297181,130003211,MLH1,2744,1,1,1,,g:unknown/null,1,n:not_applicable_null,a:abnormal_methyl,n:not_applicable_null,b:normal_copy_no,n:not_applicable_null,methyl,0,,,2017-10-07,,,,p.(Val600Glu),1,p.(Val600Glu),DNA methylation / imprinting / epigenetic analysis,Birmingham (molecular lab)
+130030028,11315645,130003234,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-02,,2019-06-08,2020-01-22,,0,,,
+130030052,11535072,130003811,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,1,c.35G>A,c.35G>A,2018-01-10,,,,,0,,,
+130030078,11427771,130004587,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-08,1)authoriseddate,2018-10-04,,,0,,,Royal Marsden (molecular lab)
+130030079,11079923,130004626,BRAF,6,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-08-19,,,,,0,,"Sequencing, Dideoxy/Sanger",Exeter (molecular lab)
+130030083,10498442,130004762,BRAF,6,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-18,,,,p.(Gln61Lys),1,p.(Gln61Lys),Pyrosequencing,
+130030089,11764880,130004903,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-24,,,,,0,,,
+130030095,10148212,130005105,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-24,,,,,0,,,
+130030107,11495802,130005310,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-14,3)receiveddate,2019-09-18,,,0,,,Liverpool (molecular lab)
+130030156,10294677,130006622,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-06,,,,,0,,,
+130030211,11615803,130008057,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-02,,,,,0,,,
+130030277,11373624,130009827,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-07-28,1)authoriseddate,,2019-08-31,,0,,,Pathology lab
+130030371,10436891,130012332,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-23,1)authoriseddate,2019-10-08,2019-10-23,,0,,,Birmingham (molecular lab)
+130030414,10751597,130013404,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-12-07,,,2016-12-07,,0,,,
+130030420,11923852,130013576,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-29,1)authoriseddate,2020-01-27,,,0,,,Newcastle (molecular lab)
+130030510,10583842,130016028,BRAF,6,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-09-12,,,2018-09-12,"p.(Asn323MetfsTer21),p.(Lys267ArgfsTer9)",2,multiple,"Sequencing, Next Generation (NGS)",Bristol (molecular lab)
+130030540,11804879,130016641,MLH1,2744,1,1,1,,g:unknown/null,1,n:not_applicable_null,a:abnormal_methyl,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,methyl,0,,,2019-11-20,1)authoriseddate,,,,0,,DNA methylation / imprinting / epigenetic analysis,Birmingham (molecular lab)
+130030587,10866995,130017864,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-15,,,,,0,,,
+130030601,10567057,130018152,SDHB,68,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-08-24,3)receiveddate,2017-08-22,2017-08-24,,0,,,Birmingham (molecular lab)
+130030614,10262124,130018440,MLH1,2744,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,a:abnormal_methyl,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,methyl,0,,,2017-12-19,,,,,0,,DNA methylation / imprinting / epigenetic analysis,Exeter (molecular lab)
+130030615,10642189,130018452,MLH1,2744,1,1,1,,g:unknown/null,0,n:not_applicable_null,b:normal_epi,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-26,,,,,0,,,
+130030731,10414365,130022840,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-08-12,,,,,0,,,
+130030769,10780796,130024138,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,1,c.436GA>,c.436GA>,2018-01-15,,,,p.(Val600Glu),1,p.(Val600Glu),,
+130030790,11812024,130024867,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-29,,,,,0,,,
+130030834,10688081,130026594,KRAS,47,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2018-10-02,,2018-09-30,,,0,,Pyrosequencing,Bristol (molecular lab)
+130030863,10686239,130027669,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-10-20,,,,,0,,"Sequencing, Dideoxy/Sanger",Pathology lab
+130030868,10563213,130027867,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-08-24,,,,,0,,,
+130030885,10157604,130028572,BRAF,6,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-10-02,,2017-10-20,,,0,,,
+130031016,10747198,130027489,BRAF,6,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2016-09-25,1)authoriseddate,2016-10-20,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
+130031022,11657018,130028832,BRAF,6,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-04,,,,,0,,Pyrosequencing,Manchester (molecular lab)
+130031025,10545340,130002185,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-07-28,,,2017-07-28,,0,,,
+130060215,10446320,130000268,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-28,1)authoriseddate,2019-03-18,2019-02-28,,0,,Immunochemistry,Birmingham (molecular lab)
+130060227,10602705,130000637,PTEN,62,2,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-05-05,1)authoriseddate,2016-04-01,,,0,,Immunochemistry,"Birmingham (molecular lab),Unknown"
+130060231,10883248,130000697,PDGFRA,59,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,cb:borderline_a_over_exp,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,0,,,2018-05-24,3)receiveddate,,,,0,,"Sequencing, Dideoxy/Sanger",Leeds (molecular lab)
+130060255,10333834,130001392,PDGFRA,59,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-27,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+130060300,10136461,130002759,CTNNB1,22,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2019-10-15,1)authoriseddate,2019-10-04,2019-10-15,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130060307,10934432,130003086,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-08-13,3)receiveddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+130060311,11315645,130003234,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-06-02,3)receiveddate,,2019-06-02,,0,,Immunochemistry,Birmingham (molecular lab)
+130060355,11427771,130004587,PDGFRA,59,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-23,1)authoriseddate,,,,0,,"Sequencing, Dideoxy/Sanger,Sequencing, Next Generation (NGS)",Leeds (molecular lab)
+130060356,11079923,130004626,PDGFRA,59,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2018-10-07,1)authoriseddate,,2018-10-07,,0,,Multiple methods,Newcastle (molecular lab)
+130060360,10498442,130004762,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-18,3)receiveddate,2019-08-16,2019-08-18,,0,,,Birmingham (molecular lab)
+130060367,10705148,130005012,PDGFRA,59,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2018-11-11,1)authoriseddate,,,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
+130060381,11495802,130005310,ERBB2 (HER2 / NEU),26,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-14,,2019-08-10,2019-10-14,,0,,Immunochemistry,
+130060391,10641525,130005582,SMAD4,72,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-23,1)authoriseddate,2019-10-18,2019-09-23,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130060421,10741683,130006608,PDGFRA,59,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2017-11-28,1)authoriseddate,2017-11-10,2017-11-28,,0,,SSCP,Royal Marsden (molecular lab)
+130060450,11726047,130007649,PDGFRA,59,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-25,1)authoriseddate,2019-07-30,,,0,,"Sequencing, Dideoxy/Sanger",Royal Marsden (molecular lab)
+130060462,11869426,130008000,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2019-11-14,3)receiveddate,,2019-11-14,,0,,Immunochemistry,Birmingham (molecular lab)
+130060475,10267752,130008459,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-06-14,1)authoriseddate,,2019-09-17,,0,,"Sequencing, Dideoxy/Sanger",Manchester (molecular lab)
+130060502,10221001,130009259,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2019-03-14,3)receiveddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+130060505,11152554,130009318,MUTYH,2850,1,1,1,"a:abnormal,a:abnormal",a:abnormal,1,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,0,,,2019-11-16,1)authoriseddate,,2019-11-16,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130060521,11373624,130009827,CTNNB1,22,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2019-07-28,1)authoriseddate,2019-07-24,2019-07-28,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130060575,11261246,130011591,POLD1,3408,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-12,1)authoriseddate,2019-06-08,2019-07-12,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130060631,10323139,130013338,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-23,1)authoriseddate,,,,0,,,
+130060659,10028124,130014023,ROS1,67,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-22,,,,,0,,"Sequencing, Next Generation (NGS)",Liverpool (molecular lab)
+130060722,11569552,130015996,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-03-02,,,,,0,,,
+130060723,10583842,130016028,PMS1,3393,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-12,,2018-08-06,,,0,,,
+130060782,11056849,130017670,BMPR1A,577,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-01-03,,,,,0,,Immunochemistry,Birmingham (molecular lab)
+130060813,10262124,130018440,ALK,3,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-12-19,2)requesteddate,2018-01-05,,,0,,"Sequencing, Next Generation (NGS)",
+130060927,11636844,130023791,EGFR,24,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-25,,2019-09-19,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+130060962,11812024,130024867,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-29,,2019-09-18,,,0,,,
+130061002,10688081,130026594,RET,66,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-16,,,2018-10-16,,0,,,
+130061026,10686239,130027669,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-20,3)receiveddate,2018-08-24,,,0,,,Birmingham (molecular lab)
+130088342,11315645,130003234,ERBB2 (HER2 / NEU),26,2,2,2,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-10,3)receiveddate,2019-08-11,2019-08-10,,0,,Immunochemistry,Birmingham (molecular lab)
+130088359,11535072,130003811,ERBB2 (HER2 / NEU),26,2,2,2,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-10,3)receiveddate,2018-03-09,,,0,,FISH - Specific Probe,Birmingham (molecular lab)
+130088372,11427771,130004587,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-26,3)receiveddate,,2019-01-26,,0,,Immunochemistry,Birmingham (molecular lab)
+130088373,11079923,130004626,ERBB2 (HER2 / NEU),26,2,2,2,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-10-07,1)authoriseddate,2018-11-01,2018-10-07,,0,,Unknown,Birmingham (molecular lab)
+130088381,10705148,130005012,APC,358,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-11,1)authoriseddate,2018-10-01,2018-11-11,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+130088521,11261246,130011591,PDGFRA,59,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-05,1)authoriseddate,2019-09-19,2019-09-05,,0,,"Sequencing, Dideoxy/Sanger",Leeds (molecular lab)
+130088943,10747198,130027489,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-05-11,,,2018-05-11,,0,,,
+130088945,10413464,130028719,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-02-07,,,2019-02-07,,0,,,
+130088948,10545340,130002185,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-20,,,,,0,,,
+130113206,10659154,130000430,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-11,3)receiveddate,2018-11-29,2018-12-11,,0,,Immunochemistry,Birmingham (molecular lab)
+130113267,11535072,130003811,PDGFRA,59,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-18,1)authoriseddate,2018-04-09,,,0,,"Sequencing, Dideoxy/Sanger",Royal Marsden (molecular lab)
+130113279,11427771,130004587,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2019-02-09,3)receiveddate,,2019-02-09,,0,,Immunochemistry,Birmingham (molecular lab)
+130113280,11079923,130004626,PDGFRA,59,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-14,1)authoriseddate,2019-08-19,2019-08-14,,0,,Mass Spectrometry Genotyping / MALDI-TOF,Leeds (molecular lab)
+130113296,10641525,130005582,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2019-09-29,3)receiveddate,,2019-09-29,,0,,Immunochemistry,Birmingham (molecular lab)
+130113348,10323699,130009039,POLE,5000,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-05-17,1)authoriseddate,2017-06-09,,,0,,,
+130113360,11373624,130009827,POLE,5000,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-25,1)authoriseddate,,,,0,,,Manchester (molecular lab)
+130130130,10659154,130000430,STK11,76,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-11,1)authoriseddate,,2018-12-11,,0,,,Birmingham (molecular lab)
+130141892,11373624,130009827,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-01,,2019-11-04,,,0,,,
+130141935,11003848,130015235,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-21,1)authoriseddate,2018-02-24,,,0,,,
+140032556,10546970,140001029,CCND2,14,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-13,,,,,0,,"Sequencing, Next Generation (NGS)",Unknown
+140038451,11063441,140004505,FGFR2,30,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-02-17,,,,,0,,,
+140038477,11498979,140005998,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-28,,,,,0,,,
+140038843,11842078,140029396,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-28,,,,,0,,,
+140041319,10330132,140012701,PMS2,3394,1,1,1,,g:unknown/null,0,,,,,,,1,c.181C>A,c.181C>A,2019-07-17,,,,,0,,,Manchester (molecular lab)
+140043284,11443301,140001305,ALK,3,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2019-08-09,,,2019-08-09,,0,,,
+140043292,11063441,140004505,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-07-26,,,2018-07-26,,0,,,
+160018347,10515798,160009800,PTEN,62,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-07-29,,2019-05-11,,,0,,,
+160019902,10515798,160009800,ALK,3,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-27,,,,,0,,"Sequencing, Next Generation (NGS)",Cambridge (molecular lab)
+190007191,10630090,190007112,CDK4,18,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-03-19,,,,,0,,,
+200007157,11265171,200003163,NRAS,56,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2017-01-22,1)authoriseddate,2017-01-23,2017-01-22,,0,,,
+200007181,10115786,200003560,NRAS,56,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-30,1)authoriseddate,2018-12-11,2018-11-30,,0,,Roche COBAS,Royal Marsden (molecular lab)
+200007241,10016592,200004699,NRAS,56,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.181C>A,c.181C>A,2018-10-13,1)authoriseddate,2018-10-17,,p.(Gln61Lys),1,p.(Gln61Lys),Roche COBAS,Royal Marsden (molecular lab)
+200007286,10358207,200005325,NRAS,56,1,2,1,"b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2017-12-02,1)authoriseddate,2017-12-17,2017-12-02,,0,,SSCP,Royal Marsden (molecular lab)
+200007328,10919783,200006108,NRAS,56,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-20,1)authoriseddate,2018-10-16,2018-10-01,,0,,SSCP,Royal Marsden (molecular lab)
+200007379,10273304,200006828,KRAS,47,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-19,1)authoriseddate,,2019-08-19,,0,,,
+200007399,11914106,200002334,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-18,1)authoriseddate,2017-09-27,2017-09-18,,0,,Roche COBAS,Royal Marsden (molecular lab)
+200007414,11493544,200003652,NRAS,56,1,1,1,a:abnormal,a:abnormal,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,1,c.181C>A,c.181C>A,2019-07-17,1)authoriseddate,2019-08-14,2019-07-17,p.(Gln61Lys),1,p.(Gln61Lys),Roche COBAS,Royal Marsden (molecular lab)
+200012401,11265171,200003163,APC,358,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-04-18,,,,,0,,,
+200012424,10115786,200003560,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-08,1)authoriseddate,2019-01-18,,,0,,,Royal Marsden (molecular lab)
+200012561,10919783,200006108,EGFR,24,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-20,3)receiveddate,,,,0,,,Birmingham (molecular lab)
+200012608,10273304,200006828,EGFR,24,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-22,1)authoriseddate,,,,0,,,Royal Marsden (molecular lab)
+200012627,11914106,200002334,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-09-18,1)authoriseddate,,2017-10-04,,0,,,"Birmingham (molecular lab),Unknown"
+200012639,11493544,200003652,NRAS,56,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-21,,2019-09-10,,,0,,Unknown,
+200015518,11493544,200003652,KIT,44,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-09-24,,2019-09-26,2019-09-24,,0,,,
+200018133,11914106,200002334,KIT,44,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-04-04,1)authoriseddate,2018-01-09,,,0,,,Birmingham (molecular lab)
+200018928,11914106,200002334,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-08-14,1)authoriseddate,,,,0,,,Birmingham (molecular lab)
+200019183,11914106,200002334,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-26,,,,,0,,,
+200019237,11914106,200002334,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-26,,,,,0,,,
+220002814,10401620,220000516,MGMT,51,1,1,1,b:normal,b:normal,0,n:not_applicable_null,b:normal_epi,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-09-04,2)requesteddate,2018-10-03,2018-09-04,,0,,DNA methylation / imprinting / epigenetic analysis,Birmingham (molecular lab)
+220002824,11359986,220001787,MGMT,51,1,1,1,b:normal,b:normal,0,n:not_applicable_null,b:normal_epi,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-05,1)authoriseddate,2019-04-03,2019-03-05,,0,,DNA methylation / imprinting / epigenetic analysis,Birmingham (molecular lab)
+220005303,11359986,220001787,ROS1,67,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-05,3)receiveddate,2019-04-03,2019-03-05,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+220007260,11359986,220001787,TERT,77,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-05,,2019-03-28,,,0,,,
+240002859,10203240,240000288,MPL,2779,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-05-30,3)receiveddate,,2019-05-30,,0,,FISH - Specific Probe,Birmingham (molecular lab)
+240002864,11313606,240000434,MPL,2779,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-22,1)authoriseddate,2018-11-22,,p.V617F,1,p.V617F,Fragment length analysis,Royal Marsden (molecular lab)
+240002922,11999778,240002144,MYC,52,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-21,1)authoriseddate,2019-01-22,2019-01-21,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+240007378,11313606,240000434,TERT,77,1,1,1,e:failed,e:failed,0,,,,,,,0,,,2019-02-06,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Royal Marsden (molecular lab)
+240009682,11313606,240000434,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,1,c.3140A>G,c.3140A>G,2019-03-09,,,,,0,,,
+250000105,10758577,250000105,EWSR1,28,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-26,3)receiveddate,2019-12-22,,,0,,,Unknown
+250000450,10411196,250000450,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-07,3)receiveddate,2019-11-19,2019-11-09,,0,,Immunochemistry,Pathology lab
+250000482,10514721,250000482,PMS2,3394,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-10-29,3)receiveddate,2017-10-26,,,0,,Immunochemistry,Leeds (molecular lab)
+250000580,10802037,250000580,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-02,,2017-09-29,,,0,,Immunochemistry,Leeds (molecular lab)
+250000827,11199532,250000827,CD274 (PD-L1),4842,2,4,2,"b:normal,b:normal,b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-11-14,1)authoriseddate,2016-11-15,2016-11-26,,0,,Immunochemistry,Unknown
+250001017,11407859,250001017,KIT,44,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-14,2)requesteddate,2018-09-21,2019-02-14,,0,,,
+250001395,11641657,250001395,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-03,1)authoriseddate,2019-01-04,,,0,,,
+250001446,11398682,250001446,PMS2,3394,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2016-05-31,2)requesteddate,2016-06-29,,,0,,Immunochemistry,
+250001450,11967619,250001450,MDM2,2663,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,0,,,2018-11-13,,,,,0,,FISH - Specific Probe,Cambridge (molecular lab)
+250001532,11270082,250001532,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-05,1)authoriseddate,,,,0,,Immunochemistry,Unknown
+250001710,10175069,250001710,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2017-01-04,1)authoriseddate,2017-01-05,2017-02-01,,0,,Immunochemistry,
+250001825,10495460,250001825,NRAS,56,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-14,1)authoriseddate,2019-05-24,,,0,,Roche COBAS,Birmingham (molecular lab)
+250002243,11594432,250002243,NRAS,56,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,1,c.734G>T,c.734G>T,2019-08-06,3)receiveddate,2019-08-07,2019-08-06,,0,,Roche COBAS,
+250002422,10972184,250002422,MDM2,2663,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,0,,,2019-02-25,4)collecteddate,,2019-02-25,,0,,FISH - Specific Probe,Unknown
+250002467,11592933,250002467,NRAS,56,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-05-27,3)receiveddate,2019-05-31,,,0,,Mass Spectrometry Genotyping / MALDI-TOF,
+250002544,10365890,250000001,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-11-17,,,2019-11-17,,0,,Immunochemistry,Unknown
+250002549,11646617,250000106,BRAF,6,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-12,1)authoriseddate,2019-04-21,,,0,,Immunochemistry,Unknown
+250002556,10161894,250000271,CD274 (PD-L1),4842,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2017-04-18,1)authoriseddate,2017-04-18,2017-04-18,,0,,Immunochemistry,
+250002557,10279906,250000281,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-10-18,,2018-05-18,,,0,,,Unknown
+250002568,10234712,250000416,MDM2,2663,2,2,2,"a:abnormal,a:abnormal",a:abnormal,1,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,ab:abnormal_copy_no_gain,n:not_applicable_null,copy_no_gain,1,c.1756_1785dup,c.1756_1785dup,2016-07-25,1)authoriseddate,2016-08-24,,,0,,FISH - Specific Probe,
+250002569,11567890,250000424,ERBB2 (HER2 / NEU),26,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-06-17,,,2016-06-17,,0,,,
+250002590,10976526,250000912,PDGFRA,59,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2018-03-31,1)authoriseddate,2018-03-29,,,0,,,Pathology lab
+250002592,10596241,250000920,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,ab:abnormal_over_exp,n:not_applicable_null,n:not_applicable_null,over_exp,0,,,2018-07-31,3)receiveddate,2018-08-02,,,0,,Immunochemistry,Birmingham (molecular lab)
+250002608,11105249,250001162,ALK,3,1,1,1,,g:unknown/null,1,n:not_applicable_null,n:not_applicable_null,aa:abnormal_under_exp,n:not_applicable_null,n:not_applicable_null,under_exp,0,,,2019-10-29,1)authoriseddate,2019-11-13,2019-10-29,,0,,,Pathology lab
+250002631,10973913,250001584,SS18,5037,1,1,1,a:abnormal,a:abnormal,1,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,a:abnormal_fusion/trans,fus_trans,0,,,2018-04-16,,,2018-04-16,,0,,"Sequencing, Dideoxy/Sanger",Birmingham (molecular lab)
+250002639,11160777,250001649,PMS2,3394,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-17,1)authoriseddate,2019-04-15,2019-04-17,,0,,Immunochemistry,
+250002640,11520105,250001677,EGFR,24,3,4,2,"b:normal,b:normal,b:normal,b:normal",b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-05,3)receiveddate,2019-12-15,2019-12-16,,0,,Roche COBAS,Unknown
+250002642,10807005,250001697,MDM2,2663,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_copy_no,n:not_applicable_null,,0,,,2019-09-16,,,2019-09-16,,0,,Immunochemistry,Birmingham (molecular lab)
+250002650,11972858,250001892,CD274 (PD-L1),4842,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-28,,,2018-07-28,,0,,Immunochemistry,Sheffield (molecular lab)
+250002660,10392857,250002223,CD274 (PD-L1),4842,2,2,2,"b:normal,e:failed",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-07-09,3)receiveddate,2018-06-20,2018-07-09,,0,,Immunochemistry,Birmingham (molecular lab)
+250002663,11176467,250002275,CD274 (PD-L1),4842,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-25,,,,,0,,Immunochemistry,
+250002687,11783998,250001761,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-05-07,1)authoriseddate,2018-05-21,2018-05-07,,0,,Immunochemistry,Birmingham (molecular lab)
+250002774,10758577,250000105,CD274 (PD-L1),4842,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-12-26,,,2019-12-26,,0,,Immunochemistry,
+250003147,10802037,250000580,CD274 (PD-L1),4842,2,2,2,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-02-02,,,,,0,,Immunochemistry,
+250003473,11407859,250001017,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-02-14,3)receiveddate,,,,0,,,Unknown
+250003695,11806400,250001296,MSH6,2808,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-19,1)authoriseddate,2018-12-22,,,0,,Immunochemistry,Pathology lab
+250003773,11641657,250001395,MSH6,2808,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-07,,2018-12-27,2019-01-07,,0,,Roche COBAS,
+250003814,11967619,250001450,BRAF,6,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-11-13,,2018-11-18,2018-11-13,,0,,Roche COBAS,
+250003852,10485603,250001496,MSH6,2808,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-24,1)authoriseddate,,,,0,,Roche COBAS,Royal Marsden (molecular lab)
+250003880,11270082,250001532,MSH6,2808,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-03-16,,2019-02-02,2019-03-16,,0,,Immunochemistry,
+250004057,11558219,250001753,EGFR,24,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-04-04,,,,,0,,Roche COBAS,
+250004113,10495460,250001825,ALK,3,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-05-15,,,2019-05-15,,0,,FISH - Specific Probe,
+250004425,10290878,250002233,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-03-30,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+250004434,11594432,250002243,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-06,1)authoriseddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+250004604,11592933,250002467,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-27,,,,,0,,,
+250004697,10976526,250000912,EWSR1,28,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-04-06,1)authoriseddate,2018-03-19,,,0,,Immunochemistry,Manchester (molecular lab)
+250004699,10596241,250000920,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-09-02,,2018-09-09,,,0,,,
+250004738,11160777,250001649,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-12-04,,,,,0,,,
+250004747,11972858,250001892,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-17,,2018-07-06,2018-12-17,,0,,,
+250004754,11980078,250002240,MYB,2853,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-10,1)authoriseddate,,,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+250004755,11176467,250002275,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-09,,,,,0,,,
+250005420,11806400,250001296,MSH2,2804,1,1,1,b:normal,b:normal,0,,,,,,,0,,,2019-03-19,,2016-08-04,,,0,,"Sequencing, Next Generation (NGS)",
+250005472,11641657,250001395,MSH2,2804,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-01-07,,2019-02-05,,,0,,Immunochemistry,
+250005496,11398682,250001446,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2016-05-31,,2016-06-28,2016-05-31,,0,,Immunochemistry,
+250005521,10485603,250001496,MSH2,2804,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-03-26,1)authoriseddate,,,,0,,Immunochemistry,Cambridge (molecular lab)
+250005541,11270082,250001532,MLH1,2744,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-05-10,1)authoriseddate,2018-11-27,,,0,,Pyrosequencing,Pathology lab
+250005670,11558219,250001753,MSH2,2804,2,2,2,"b:normal,b:normal",b:normal,0,,,,,,,0,,,2019-04-04,,,2019-05-03,,0,,Immunochemistry,
+250005712,10495460,250001825,BRAF,6,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-07-17,3)receiveddate,2019-03-29,2019-07-17,,0,,"Sequencing, Next Generation (NGS)",Newcastle (molecular lab)
+250005951,10290878,250002233,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-04-28,1)authoriseddate,,,,0,,Immunochemistry,Birmingham (molecular lab)
+250005999,10368355,250002306,BRCA2,8,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-10-04,,,,,0,,,
+250006150,11646617,250000106,KIT,44,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-06-25,3)receiveddate,2019-03-13,2019-06-25,,0,,"Sequencing, Next Generation (NGS)",Birmingham (molecular lab)
+250006158,11567890,250000424,MGMT,51,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2016-06-20,1)authoriseddate,,,,0,,LOH testing,Manchester (molecular lab)
+250006174,10596241,250000920,CIC,904,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2018-09-27,1)authoriseddate,2018-10-23,2018-09-27,,0,,"Sequencing, Next Generation (NGS)",Manchester (molecular lab)
+250006200,10973913,250001584,MGMT,51,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-02-06,1)authoriseddate,,,,0,,"Sequencing, Dideoxy/Sanger",Manchester (molecular lab)
+250006214,11972858,250001892,HIST1H3B,37,1,1,1,b:normal,b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-12-17,,2018-12-31,,,0,,,
+250006234,11802787,250002512,PDGFRA,59,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-08-27,1)authoriseddate,,2019-08-27,,0,,,Manchester (molecular lab)
+250006420,10802037,250000580,CD274 (PD-L1),4842,1,2,1,"b:normal,b:normal",b:normal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-09,,,,,0,,Immunochemistry,
+250006693,11641657,250001395,BRAF,6,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-02-04,,2019-01-06,2019-02-04,,0,,Immunochemistry,
+250006715,11398682,250001446,MLH1,2744,1,1,1,,g:unknown/null,1,a:abnormal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,dna_sq,0,,,2016-05-31,,2016-06-26,2016-05-31,,0,,Immunochemistry,
+250006734,10485603,250001496,MLH1,2744,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2018-03-26,1)authoriseddate,,2018-03-26,,0,,Immunochemistry,Pathology lab
+250006750,11270082,250001532,MLH1,2744,1,1,1,a:abnormal,a:abnormal,0,n:not_applicable_null,n:not_applicable_null,b:normal_exp,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-11,,,,,0,,Immunochemistry,
+250007229,11567890,250000424,H3F3A,35,1,1,1,,g:unknown/null,0,,,,,,,0,,,2017-06-27,,,,,0,,,
+250007245,10655817,250001060,MYB,2853,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-10-17,,,,,0,,,
+250007255,11225768,250001320,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-17,1)authoriseddate,2018-11-13,,,0,,"Sequencing, Next Generation (NGS)",Leeds (molecular lab)
+250007277,11176467,250002275,IDH1,41,1,1,1,,g:unknown/null,0,,,,,,,1,c.1669_1674delTGGAAG,c.1669_1674delTGGAAG,2019-06-30,,,,p.(Gly13Asp),1,p.(Gly13Asp),,
+250007387,10514721,250000482,CD274 (PD-L1),4842,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-01-13,,2018-02-08,,,0,,,
+250007541,11806400,250001296,ALK,3,1,1,1,,g:unknown/null,0,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,b:normal_fusion/trans,,0,,,2019-09-26,,2019-09-04,2019-09-26,,0,,Immunochemistry,
+250007591,11270082,250001532,ALK,3,1,1,1,,g:unknown/null,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-06-11,,,,,0,,Immunochemistry,
+250008302,10368355,250002306,IDH2,42,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-12-22,,2018-09-17,,,0,,"LOH testing,Sequencing, Next Generation (NGS)",
+250008407,11176467,250002275,IGH,4931,1,1,1,b:normal,b:normal,0,b:normal_dna_sq,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,n:not_applicable_null,,0,,,2019-08-12,,,2019-08-12,,0,,,
+250008630,10368355,250002306,H3F3A,35,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-01-05,,2019-01-30,2019-01-05,,0,,,
+250008908,10596241,250000920,NRAS,56,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-06,,,,,0,,"Sequencing, Next Generation (NGS)",
+250008928,11176467,250002275,KRAS,47,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-09-07,1)authoriseddate,2019-04-24,2019-09-07,,0,,"Sequencing, Dideoxy/Sanger",Royal Marsden (molecular lab)
+250009260,10596241,250000920,PIK3CA,60,1,1,1,,g:unknown/null,0,,,,,,,0,,,2018-11-16,,,2018-11-16,,0,,,
+250009388,11176467,250002275,H3F3A,35,1,1,1,,g:unknown/null,0,,,,,,,0,,,2019-11-15,4)collecteddate,,2019-11-15,,0,,SSCP,Newcastle (molecular lab)
