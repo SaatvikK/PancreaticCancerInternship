@@ -1,7 +1,7 @@
 import pandas as pd
 import sklearn as skl
 import numpy as np
-import glob
+import glob, os
 import random as rand
 
 class Preprocessor:
@@ -96,22 +96,76 @@ class Preprocessor:
   # ================================================================================================================== #
   
   # ================================================== Feature Selection ================================================== #
-  def featureSelection(self):
+  def manualFS(self, desiredFeatures: dict) -> list:
+    """
+    desiredFeatures format:
+    {
+      "dfname": [<feature names as strings>]
+    }
+    """
+
+    selectedDFs = list(desiredFeatures.keys()) # get the dfnames 
+    # Loop through each DF that has at least one desired feature.
+
+    print("========== BEGINNING MANUAL FEATURE SELECTION ==========")
+    for i in range(len(selectedDFs)):
+      dfname = selectedDFs[i]
+      features = desiredFeatures[dfname]
+      print("dfname:", dfname, ", features: ", features)
+      dfIdx = self.dfnames.index(dfname)  # get the relevant df
+      df = self.dfs[dfIdx]
+
+      allFeatures = df.columns.values.tolist()
+
+      if set(features) - set(allFeatures): raise Exception("Error: Not all the desired features selected for the df " + dfname + " are in the df. Please verify.")
+
+      # Add ONLY the selected features to a new df.
+      newdf = df.loc[:, features].copy(deep=True)
+
+      # Deep copy to create a new variable
+      self.dfs[dfIdx] = newdf.copy(deep = True)
+      print(newdf)
+      print("Done", dfname)
+    
+    # Names the caller *wants* to keep
+    wanted = set(desiredFeatures.keys())
+
+    # Build a list of indices for frames we will delete
+    toDelete = [i for i, name in enumerate(self.dfnames) if name not in wanted]
+
+    # Remove from the end to avoid index shifts
+    for i in reversed(toDelete):
+        del self.dfnames[i]
+        del self.dfs[i]
+
+    return self.dfs
+
+  def featureSelection(self, method = "variance", manualFeatures = {}):
     self.numpyTables = [None]*len(self.dfs)
 
+    if method == "manual":
+      if manualFeatures == {}: raise Exception("You've chosen the manual feature selection option but have left the parameter empty. Please format your dicitonary as: manualFeaturs = {'dfname': [<list of feature names>], ...} ")
 
-    for i in range(len(self.dfs)):
-      df = self.dfs[i]
-      dfname = self.dfnames[i]
+      # Do FS
+      dfs = self.manualFS(desiredFeatures = manualFeatures)
 
-      # Variance FS is unsupervised so no splitting is required.
-      res = self.FeatSelectVar(df)
-      print("=============================", dfname, "=============================")
-      print("For df", dfname, "variances are:", res[1], "for features", res[2])
-      print(" ")
-      print("Number of features BEFORE:", df.shape[1], ", number of features AFTER:", res[0].shape[1])
-      print("======================================================================")
-      self.numpyTables[i] = res[0]
+      # Convert to numpy
+      for i in range(len(dfs)):
+        self.numpyTables[i] = self.convToNumpy(dfs[i])
+
+    if method == "variance":
+      for i in range(len(self.dfs)):
+        df = self.dfs[i]
+        dfname = self.dfnames[i]
+
+        # Variance FS is unsupervised so no splitting is required.
+        res = self.FeatSelectVar(df)
+        print("=============================", dfname, "=============================")
+        print("For df", dfname, "variances are:", res[1], "for features", res[2])
+        print(" ")
+        print("Number of features BEFORE:", df.shape[1], ", number of features AFTER:", res[0].shape[1])
+        print("======================================================================")
+        self.numpyTables[i] = res[0]
 
     return self.numpyTables
 
@@ -213,11 +267,16 @@ class Preprocessor:
   # ====================================================================================================================== #
   
   def saveToCSV(self):
+    try:
+      for fname in glob.glob(self.dirpath + "/*"):
+        os.remove(fname)
+    except: pass;
+
     for i in range(len(self.dfs)):
       path = self.dirpath + "/" + self.dfnames[i] + ".csv"
       df = self.dfs[i]
       df.to_csv(index = False, path_or_buf = path)
-
+  
   def openCSVs(self):
     dfs = []
     dfnames = []
@@ -263,14 +322,49 @@ class Preprocessor:
         dictionary[dfname][feature] = self.detFeatureType(df[feature], feature)
     return dictionary
 
+  @staticmethod
+  def convToNumpy(df):
+    return df.to_numpy()
+  
+
 preprocor = Preprocessor(label = "VITALSTATUS")
-preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
-print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
-preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)
-preprocor.mapper()
-preprocor.findDateCols()
-preprocor.convToUnix()
-preprocor.featureSelection()
+#preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
+#print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
+#preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)
+#preprocor.mapper()
+#preprocor.findDateCols()
+#preprocor.convToUnix()
+preprocor.featureSelection(method = "manual", manualFeatures = {
+  "patient": [
+    "PATIENTID",
+    "ETHNICITY",
+    "DEATHCAUSECODE_1A",
+    "DEATHCAUSECODE_1B",
+    "DEATHCAUSECODE_1C",
+    "DEATHCAUSECODE_2",
+    "VITALSTATUS"
+  ],
+  "tumour": [
+    "TUMOURID",
+    "PATIENTID",
+    "T_BEST",
+    "N_BEST",
+    "M_BEST",
+    "STAGE_BEST",
+    "GRADE",
+    "AGE",
+    "GLEASON_PRIMARY",
+    "GLEASON_SECONDARY"
+  ],
+  "regimen": [
+    "ENCORE_PATIENT_ID",
+    "MERGED_REGIMEN_ID",
+    "HEIGHT_AT_START_OF_REGIMEN",
+    "WEIGHT_AT_START_OF_REGIMEN",
+    "INTENT_OF_TREATMENT",
+    "START_DATE_OF_REGIMEN"
+  ]
+})
 preprocor.printFeatType()
 preprocor.saveToCSV()
 
