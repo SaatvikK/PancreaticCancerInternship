@@ -3,6 +3,8 @@ import sklearn as skl
 import numpy as np
 import glob, os
 import random as rand
+import sqlite3 as sql
+import pathlib as pali
 
 class Preprocessor:
   def __init__(self, dirpath = "../data-v2-working/Data", label = ""):
@@ -326,6 +328,24 @@ class Preprocessor:
   def convToNumpy(df):
     return df.to_numpy()
   
+  # Convert the CSVs into SQL
+  def convToSQL(self):
+    folder   = pali.Path(self.dirpath)           # where your CSVs live
+    dbPath  = pali.Path(self.dirpath + "/dataset.db")
+
+    with sql.connect(dbPath) as con:
+        for csvFile in folder.glob("*.csv"):
+            table = csvFile.stem              # filename without .csv
+            print(f"Loading {csvFile.name} → {table}")
+
+            df = pd.read_csv(csvFile)
+            df.to_sql(table, con, if_exists="replace", index=False)
+
+            # auto-index any column that ends with "id"
+            for col in df.columns:
+                if col.lower().endswith("id"):
+                    ix = f"idx_{table}_{col}"
+                    con.execute(f"CREATE INDEX IF NOT EXISTS {ix} ON {table}({col});")
 
 preprocor = Preprocessor(label = "VITALSTATUS")
 #preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
@@ -334,6 +354,7 @@ preprocor = Preprocessor(label = "VITALSTATUS")
 #preprocor.mapper()
 #preprocor.findDateCols()
 #preprocor.convToUnix()
+"""
 preprocor.featureSelection(method = "manual", manualFeatures = {
   "patient": [
     "PATIENTID",
@@ -365,8 +386,10 @@ preprocor.featureSelection(method = "manual", manualFeatures = {
     "START_DATE_OF_REGIMEN"
   ]
 })
-preprocor.printFeatType()
-preprocor.saveToCSV()
+"""
+#preprocor.printFeatType()
+#preprocor.saveToCSV()
+preprocor.convToSQL()
 
 #import pprint
 #pprint.pprint(preprocor.buildFeatureDict())
