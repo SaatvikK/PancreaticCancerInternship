@@ -1,2 +1,6 @@
 data-v2-original
 venv
+/data-v2-working/Data-Backup
+
+/src/aggregation2.py
+/src/halfdoneaggregation.py
