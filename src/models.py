@@ -4,7 +4,7 @@ import sklearn as skl
 
 class Model:
   def __init__(self, preload = None): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
-    if preload is not None: self.model = preload
+    self.model = preload if preload is not None else None
     self.trained = False
 
   def train(self, X, Y):
@@ -38,7 +38,7 @@ class Model:
 
 class knnModel(Model):
   def __init__(self, preload = None, neighbours = 5, metric = "manhattan"):
-    super().__init__(model=preload)
+    super().__init__(preload=preload)
     # Only build a new estimator if nothing was pre‑loaded
     if self.model is None:
 

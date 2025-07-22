@@ -11,10 +11,10 @@ class Preprocessor:
     if dirpath[len(dirpath)-1] in ["/", "\\"]: raise Exception("`dirpath` cannot end with / or \\.")
     self.dirpath = dirpath
     self.dfs, self.dfnames = self.openCSVs()
-
+    self.label = label
     # N.B. Tables with NO clear primary key are NOT included.
     self.ignoreCols = {
-      "label": "VITALSTATUS",
+      "label": self.label,
       "primaryKeys": {
         "patient": "PATIENTID",
         "tumour": "TUMOURID",
