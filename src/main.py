@@ -37,7 +37,8 @@ class Main:
 
     model.train(X_train, Y_train)
     res = model.test(X_test, Y_test)
-    pp.pprint(res)
+    #pp.pprint(res)
+    model.ppMetrics(res)
 
   def readSQLDB(self, tableName = "patient") -> pd.DataFrame:
     with sql.connect(self.dbPath) as connection:
