@@ -5,4 +5,4 @@ venv
 /src/aggregation2.py
 /src/halfdoneaggregation.py
 
-src/__pycache__
+/src/__pycache__
