@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sklearn as skl
+#import tabulate
 
 class Model:
   def __init__(self, preload = None): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
@@ -35,6 +36,32 @@ class Model:
         "classification_report": skl.metrics.classification_report(Y, Ypred),
     }
 
+  def ppMetrics(self, metrics):
+    # ------------------------ #
+    # 2️⃣  Pretty‑print summary #
+    # ------------------------ #
+    print("\n🔹 Overall metrics")
+    print("-----------------")
+    for k in ("accuracy", "precision", "recall", "f1"):
+        print(f"{k.capitalize():>9}: {metrics[k]:.3f}")
+
+    # ------------------------ #
+    # 3️⃣  Detailed class report#
+    # ------------------------ #
+    print("\n🔹 Classification report")
+    print("------------------------")
+    print(metrics["classification_report"].rstrip())
+
+    # ------------------------ #
+    # 4️⃣  Confusion matrix 🧩  #
+    # ------------------------ #
+    labels = [str(i) for i in range(len(metrics["confusion_matrix"]))]
+    df_cm = pd.DataFrame(metrics["confusion_matrix"], index=labels, columns=labels)
+
+    print("\n🔹 Confusion matrix")
+    print("-------------------")
+    print(tabulate.tabulate(df_cm, headers="keys", tablefmt="github"))
+
 
 class knnModel(Model):
   def __init__(self, preload = None, neighbours = 5, metric = "manhattan"):
@@ -54,3 +81,4 @@ class knnModel(Model):
       return skl.neighbors.KNeighborsClassifier(
           n_neighbors=int(neighbours), metric=metric
       )
+  

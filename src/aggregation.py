@@ -1,5 +1,7 @@
+############### IMPORTS ###############
 import sqlite3 as sql
 import pandas as pd
+#######################################
 
 class Aggregator:
   def __init__(self, dbPath):
@@ -7,6 +9,7 @@ class Aggregator:
     self.checkDB(dbPath)
     self.aggregations = {}
   
+  # Method to check if the db actually exists.
   def checkDB(self, dbPath):
     try:
       with sql.connect(dbPath) as con:
@@ -18,10 +21,12 @@ class Aggregator:
     except Exception as e:
       raise Exception("Error in opening DB. Please check that the DB has been created with the preprocess.Preprocessor.convToSQL() method: \n" + str(e))
   
+  # Sends a query request to the aforementioned DB.
   def dbRequester(self, path = "../data-v2-working/Data/dataset.db", query = "select * from patient") -> pd.DataFrame:
     with sql.connect(path) as connection:
       return pd.read_sql_query(query, connection)
 
+  # Aggregates the regimen table to the patient level.
   def regimenPatient(self):
     # This method aggregates rhe regimen table on to the patient level.
     # This SQL query will take every regimen row for each unique patient id and attempt to 
@@ -49,6 +54,7 @@ class Aggregator:
     print(result)
     return result
   
+  # Aggregates the tumour table to the patient level.
   def tumourPatient(self):
     # Tumour -> Patient aggregation
     # Count number of tumours per patient.
