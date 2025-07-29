@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import sklearn as skl
+import knnboundary as boundgraph
 #import tabulate
 
 class Model:
@@ -96,6 +97,9 @@ class knnModel(Model):
       self.model = skl.neighbors.KNeighborsClassifier(
         n_neighbors=int(neighbours), metric=metric
       )
+
+  def plotClassBound(self, X, Y, featureX, featureY, target):
+    boundgraph.plotBounds(self.model, X, Y, featureX, featureY)
 
   # Convenience method (static so it can be reused elsewhere)
   @staticmethod
