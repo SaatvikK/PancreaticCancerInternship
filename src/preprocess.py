@@ -5,6 +5,7 @@ import glob, os
 import random as rand
 import sqlite3 as sql
 import pathlib as pali
+import json
 
 class Preprocessor:
   def __init__(self, dirpath = "../data-v2-working/Data", label = ""):
@@ -209,13 +210,28 @@ class Preprocessor:
     # Discrete/Categorical -> map it
     return True
   
-  def mapMaker(self, feature: pd.Series) -> dict:
+  def mapMaker(self, feature: pd.Series, fname, tablename) -> dict:
     uniqueVals = feature.unique() # Get each unique value that an observation of this feature can have.
     mapDict = {} # The map - actual_value : assigned_num
 
     for i in range(len(uniqueVals)):
        mapDict[uniqueVals[i]] = i
     
+
+    # Write map to file for referencing later.
+    data = {}
+    try:
+      with open("../data-v2-working/maps/" + tablename + ".json") as JsonFile:
+        data = json.load(JsonFile)
+    except FileNotFoundError as e:
+      data = {}
+    except json.JSONDecodeError as e:
+      data = {}
+    
+    data[fname] = mapDict
+    with open("../data-v2-working/maps/" + tablename + ".json", 'w') as outfile:
+      json.dump(data, outfile)
+
     return mapDict
 
   def mapper(self):
@@ -227,7 +243,7 @@ class Preprocessor:
         res = self.mappingCheck(feature, dfname, datapoint)
         print("res for feature", feature, "in df", dfname, ":", res)
         if res:
-          featureMap = self.mapMaker(df[feature])
+          featureMap = self.mapMaker(df[feature], feature, dfname)
           #print("map for feature", feature, "in df", dfname, ":", featureMap)
           df[feature] = df[feature].map(featureMap)
 
