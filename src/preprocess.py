@@ -246,6 +246,21 @@ class Preprocessor:
           featureMap = self.mapMaker(df[feature], feature, dfname)
           #print("map for feature", feature, "in df", dfname, ":", featureMap)
           df[feature] = df[feature].map(featureMap)
+      
+      self.dfs[i] = df
+    # delete d4, d5, x5
+    print("Removing D5, D4, and X5 class label names...")
+    print("Remaining class label names:")
+    print(self.deleteClassNames(namesToDel = [2, 3, 4, 5, 6, 7]))
+  
+  def deleteClassNames(self, namesToDel = []): #namesToDel is a list of numbers
+    idx = self.dfnames.index("patient")
+    df = self.dfs[idx]
+    if len(namesToDel) == 0: raise Exception("`namesToDel` list is empty.")
+    mask = ~df[self.label].isin(namesToDel)
+    pruned = df.loc[mask].copy()   # one deep copy is plenty
+    self.dfs[idx] = pruned
+    return pruned[self.label].unique()
 
   # ====================================================================================================================== #
 
