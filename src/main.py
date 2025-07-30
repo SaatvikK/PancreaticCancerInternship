@@ -15,13 +15,16 @@ class Main:
     self.aggor = aggregation.Aggregator(self.dbPath, self.dbname)
   
   def main(self, projLabel = "VITALSTATUS"):
-    self.setPreprocor(label = projLabel)
+    # Instantiate a preprocessor
+    self.preprocor = preproc.Preprocessor(label = projLabel)
 
-    #patient = self.readSQLDB(tableName = "patient")
+    # Using the aggregator's in-built querier, get the patient table: `select * from patient`
     patient = self.aggor.dbRequester(self.aggor.workingPath, overwrite = False)
+    
+    # Now aggregate on all selected tables
     regimen, tumourgene = self.aggregate()
     
-    # Now join all tables:
+    # Now join all tables based on PATIENTID:
     # We choose the `inner` method as we ONLY want patients who have an instance in ALL tables.
     mergedTable = patient \
     .merge(regimen, on='PATIENTID', how='outer') \
@@ -40,31 +43,18 @@ class Main:
         npX, npY, test_size=0.2, random_state=42, stratify=npY
     )
 
+    # Train the models
     print("===================== K NN MODEL =====================")
     knn = models.knnModel(preload = None, neighbours = 5, metric = "manhattan")
-
     knn.train(X_train, Y_train)
     res, Ypred = knn.test(X_test, Y_test)
     knn.ppMetrics(Y_test, Ypred, res, classLabels = ["alive", "dead", "D4", "X5"])
-   # knn.plotClassBound(X, Y, "ETHNICITY", "AGE", "VITALSTATUS")
 
     print("===================== LRC MODEL =====================")
     lrc = models.knnModel(preload = None)
-
     lrc.train(X_train, Y_train)
     res, Ypred = lrc.test(X_test, Y_test)
     lrc.ppMetrics(Y_test, Ypred, res, classLabels = ["alive", "dead", "D4", "X5"])
-
-  def readSQLDB(self, tableName = "patient") -> pd.DataFrame:
-    path = self.dbPath + "/" + self.dbname + "_working.db"
-    with sql.connect(self.dbPath) as connection:
-      req = "select * from " + tableName.lower()
-      res = pd.read_sql_query(req, connection)
-      return res
-  
-  def setPreprocor(self, label = "VITALSTATUS"):
-    self.preprocor = preproc.Preprocessor(label = label)
-    return self.preprocor
 
   def aggregate(self):
     regimen = self.aggor.regimenPatient() # regiment -> patient
