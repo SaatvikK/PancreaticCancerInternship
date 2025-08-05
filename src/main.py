@@ -60,15 +60,15 @@ class Main:
     # Train the models
     print("===================== K NN MODEL =====================")
     knn = models.knnModel(preload = None, neighbours = 5, metric = "manhattan")
-    knn.train(data["train"]["X"], data["train"]["Y"])
-    res, Ypred = knn.test(data["test"]["X"], data["test"]["Y"])
-    knn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead", "D4", "X5"])
+    knn.train(data)
+    res, Ypred = knn.test(data)
+    knn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
 
     print("===================== LRC MODEL =====================")
-    lrc = models.knnModel(preload = None)
-    lrc.train(data["train"]["X"], data["train"]["Y"])
-    res, Ypred = lrc.test(data["test"]["X"], data["test"]["Y"])
-    lrc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead", "D4", "X5"])
+    lrc = models.lrcModel(preload = None)
+    lrc.train(data)
+    res, Ypred = lrc.test(data)
+    lrc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
 
   def aggregate(self):
     regimen = self.aggor.regimenPatient() # regiment -> patient

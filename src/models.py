@@ -2,28 +2,57 @@ import pandas as pd
 import numpy as np
 import sklearn as skl
 import knnboundary as boundgraph
+import matplotlib.pyplot as plt
 #import tabulate
 
 class Model:
-  def __init__(self, preload = None): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
+  def __init__(self, preload = None, algorithm = "lrc"): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
     self.model = preload if preload is not None else None
     self.trained = False
+    self.algorithm = algorithm
 
-  def train(self, X, Y):
+  def train(self, data, epochs = 10000):
+    Xtr, Ytr, Xval, Yval = data["train"]["X"], data["train"]["Y"], data["validation"]["X"], data["validation"]["Y"]#
+    classes = np.unique(Ytr)
+
     if not self.model:
       raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
 
-    self.model = self.model.fit(X, Y)
+    accuracies = []
+    if self.algorithm == "knn":
+      self.model.fit(Xtr, Ytr)
+      acc = skl.metrics.accuracy_score(Yval, self.model.predict(Xval))
+      accuracies = [acc] * epochs
+
+    else:
+      for epoch in range(epochs):
+        if epoch == 0:
+          self.model.partial_fit(Xtr, Ytr, classes)
+        else:
+          self.model.partial_fit(Xtr, Ytr)
+
+        Y = self.model.predict(Xval)
+        accuracies.append(skl.metrics.accuracy_score(Yval, Y))
+      self.graphEpochAcc(accuracies, epochs)
+
     self.trained = True
   
-  def test(self, X, Y):
+  def test(self, data):
+    X, Y = data["test"]["X"], data["test"]["Y"]
     if not self.model: raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
-    
     if not self.trained: raise Exception("Please train model first.")
 
     Ypred = self.model.predict(X)
     return self.compMetrics(Y, Ypred), Ypred
   
+  def graphEpochAcc(self, accuracies, epochs):
+    plt.plot(accuracies)
+    plt.xlabel(f"Epoch({epochs})")
+    plt.ylabel("Accuracy")
+    plt.title("Accuracy Change With Epoch Number")
+    print("ALOGIRTHM:", self.algorithm)
+    plt.savefig(f'{self.algorithm}_AccGraph.png')
+
   def compMetrics(self, Y, Ypred, average="weighted"):
     """
     Return a dict with common classification metrics.
@@ -88,7 +117,7 @@ class Model:
 
 class knnModel(Model):
   def __init__(self, preload = None, neighbours = 5, metric = "manhattan"):
-    super().__init__(preload=preload)
+    super().__init__(preload=preload, algorithm = "knn")
     # Only build a new estimator if nothing was pre‑loaded
     if self.model is None:
 
@@ -110,11 +139,11 @@ class knnModel(Model):
   
 class lrcModel(Model):
   def __init__(self, preload = None):
-    super().__init__(preload=preload)
+    super().__init__(preload=preload, algorithm = "lrc")
     # Only build a new estimator if nothing was pre‑loaded
     if self.model is None:
 
-      self.model = skl.linear_model.LogisticRegression()
+      self.model = skl.linear_model.SGDClassifier(loss = "log_loss", max_iter = 1, learning_rate = "optimal", average = True)
 
   # Convenience method (static so it can be reused elsewhere)
   @staticmethod
