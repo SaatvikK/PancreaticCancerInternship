@@ -3,6 +3,9 @@ import numpy as np
 import sklearn as skl
 import knnboundary as boundgraph
 import matplotlib.pyplot as plt
+#import torch
+#import torch.nn as nn
+#import torch.optim as optim
 #import tabulate
 
 class Model:
@@ -51,7 +54,7 @@ class Model:
     plt.ylabel("Accuracy")
     plt.title("Accuracy Change With Epoch Number")
     print("ALOGIRTHM:", self.algorithm)
-    plt.savefig(f'{self.algorithm}_AccGraph.png')
+    plt.savefig(f'../results/learning curves/{self.algorithm}_AccGraph.png')
 
   def compMetrics(self, Y, Ypred, average="weighted"):
     """
@@ -65,6 +68,7 @@ class Model:
         "confusion_matrix": skl.metrics.confusion_matrix(Y, Ypred),
         "classification_report": skl.metrics.classification_report(Y, Ypred),
     }
+
 
   def ppMetrics(self, Ytrue, Ypred, metrics, classLabels = ["alive", "dead"]):
     """
@@ -147,5 +151,106 @@ class lrcModel(Model):
 
   # Convenience method (static so it can be reused elsewhere)
   @staticmethod
-  def make_knn():
+  def makeLRC():
       return skl.linear_model.LogisticRegression()
+
+class svmModel(Model):
+  def __init__(self, preload = None):
+    super().__init__(preload = preload, algorithm = "svm")
+    # Only build a new estimator if nothing was pre‑loaded
+    if self.model is None:
+
+      # USING SGDCLASSIFIER WITH HINGE LOSS IS EQUIVALENT TO A LINEAR SVM.
+      # We use SGDClassifier and hinge loss in order to have the `partial_fit` function - which allows us to record the learning curves.
+      self.model = skl.linear_model.SGDClassifier(loss = "hinge", max_iter = 1, learning_rate = "optimal", average = True)
+
+    # Convenience method (static so it can be reused elsewhere)
+    @staticmethod
+    def makeSVM():
+        return skl.linear_model.LogisticRegression()    
+
+
+############ DNN ############
+"""
+class dnnModel(nn.Module, Model):
+  def __init__(self, inputSize, hiddenSizes, outputSize, name = "DNN", preload = None):
+    self.inputSize = inputSize
+    self.hiddenSizes = hiddenSizes
+    self.outputSize = outputSize
+    self.name = name
+
+    nn.Module.__init__(self)
+    Model.__init__(preload = preload, algorithm = "dnn") # Model not passed into baseModel class to avoid reaching the maximum recursion depth.
+
+    # Create a list to hold all layers
+    layers = []
+    # Define the layer sizes: start with inputSize, followed by your hidden layer sizes
+    layer_sizes = [self.inputSize] + self.hiddenSizes
+
+    # Loop to create each hidden layer with a ReLU activation
+    for i in range(len(layer_sizes) - 1):
+      layers.append(nn.Linear(layer_sizes[i], layer_sizes[i + 1]))
+      layers.append(nn.Sigmoid())
+
+    # Add the output layer (we don't usually follow the output layer with an activation like ReLU
+    # if you're performing classification with CrossEntropyLoss, as it expects raw logits)
+    layers.append(nn.Linear(hiddenSizes[-1], self.outputSize))
+    
+    # Use nn.Sequential to combine all the layers into a single network
+    self.network = nn.Sequential(*layers)
+
+  def forward(self, x):
+    # The forward method defines how the data passes through the network layers
+    return self.network(x)
+
+  def predict(self, Xtest):
+    Xtest = torch.tensor(Xtest.values, dtype=torch.float32)
+    self.eval() # setting model to evaluation mode
+    with torch.no_grad():
+      outputs = self(Xtest)
+      _, preds = torch.max(outputs, 1)
+    
+    preds = preds.numpy()
+    print(type(preds))
+    #predsdf = pd.DataFrame(preds, columns=["diagnosis"])
+    return preds
+
+  def validationTest(self, Xval, Yval):
+    preds = self.predict(Xval)
+    accuracy = skl.metrics.accuracy_score(Yval, preds)
+  
+  def dnnTrain(self, data, noEpochs = 5, α = 0.001):
+    Xtr, Ytr, Xval, Yval = data["train"]["X"], data["train"]["Y"], data["validation"]["X"], data["validation"]["Y"]
+    self.criterion = nn.CrossEntropyLoss()
+    self.optimizer = optim.RMSprop(self.parameters(), lr=α)
+
+    self.accuracies = []
+    for epoch in range(noEpochs):  # Training for 5 epochs
+      # Simulated dummy data (replace these with actual data during implementation)
+      inputs = torch.tensor(Xtr.values, dtype=torch.float32)
+      labels = torch.tensor(Ytr.values, dtype=torch.long)
+
+      # Zero the gradients from the previous iteration
+      self.optimizer.zero_grad()
+      
+      # Forward pass: Compute predicted outputs by passing inputs to the model
+      outputs = self(inputs)
+      
+      # Calculate the loss
+      loss = self.criterion(outputs, labels)
+      
+      # Backward pass: Compute gradient of the loss with respect to model parameters
+      loss.backward()
+      
+      # Update parameters
+      self.optimizer.step()
+      
+      # Print the loss for each epoch to track progress
+      print(f"Epoch {epoch + 1}, Loss: {loss.item():.4f}")
+
+      # now do validation for this epoch
+      self.accuracies.append(self.validationTest(Xval, Yval))
+    
+    self.graphEpochAcc(self.accuracies, epochs = noEpochs)
+    return [True, None, self]
+"""

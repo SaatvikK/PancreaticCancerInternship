@@ -69,6 +69,24 @@ class Main:
     lrc.train(data)
     res, Ypred = lrc.test(data)
     lrc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("Feature Ranking")
+    print("-" * 60)
+    selector = skl.feature_selection.RFE(lrc.model, step = 1, n_features_to_select = 1)
+    selector.fit(data["train"]["X"], data["train"]["Y"])
+    print(selector.ranking_)
+
+    print("===================== SVM MODEL =====================")
+    svm = models.svmModel(preload = None)
+    svm.train(data)
+    res, Ypred = svm.test(data)
+    svm.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("Feature Ranking")
+    print("-" * 60)
+    selector = skl.feature_selection.RFE(svm.model, step = 1, n_features_to_select = 1)
+    selector.fit(data["train"]["X"], data["train"]["Y"])
+    print(selector.ranking_)
+
+    #dnn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
 
   def aggregate(self):
     regimen = self.aggor.regimenPatient() # regiment -> patient
