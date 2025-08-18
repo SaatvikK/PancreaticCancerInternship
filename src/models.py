@@ -55,6 +55,7 @@ class Model:
     plt.title("Accuracy Change With Epoch Number")
     print("ALOGIRTHM:", self.algorithm)
     plt.savefig(f'../results/learning curves/{self.algorithm}_AccGraph.png')
+    plt.close()
 
   def compMetrics(self, Y, Ypred, average="weighted"):
     """
@@ -147,7 +148,7 @@ class lrcModel(Model):
     # Only build a new estimator if nothing was pre‑loaded
     if self.model is None:
 
-      self.model = skl.linear_model.SGDClassifier(loss = "log_loss", max_iter = 1, learning_rate = "optimal", average = True)
+      self.model = skl.linear_model.SGDClassifier(loss = "log_loss", max_iter = 1, learning_rate = "optimal")
 
   # Convenience method (static so it can be reused elsewhere)
   @staticmethod

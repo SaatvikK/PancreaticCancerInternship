@@ -39,6 +39,32 @@ class Preprocessor:
     self.dateFeatures = {} # table : feature name
 
   # ================================================== NaNs Handling ================================================== #
+  def deleteLeakagePatient(self):
+    dfname = "patient"
+    if dfname not in self.dfnames:
+      raise ValueError(f"'{dfname}' not found in self.dfnames")
+
+    idx = self.dfnames.index(dfname)
+    df = self.dfs[idx]
+
+    leakageFeatures = [
+      "DEATHCAUSECODE_1A",
+      "DEATHCAUSECODE_1B",
+      "DEATHCAUSECODE_1C",
+      "DEATHCAUSECODE_2",
+      "DEATHCAUSECODE_UNDERLYING",
+      "DEATHLOCATIONCODE",
+      "VITALSTATUSDATE"
+    ]
+
+    # Drop only columns that exist
+    to_drop = [c for c in leakageFeatures if c in df.columns]
+    print(f"Dropping {len(to_drop)} leakage columns from patient:", to_drop)
+    df = df.drop(columns=to_drop)
+
+    self.dfs[idx] = df
+    return df
+
   def findNAs(self, deleteMajMissing = True, fillRestMissing = True, showRatios = True): # deleteMajMissing = Delete Majority (> 50%) Missing - i.e. if the majority of observations are missing, delete the feature.
     for i in range(len(self.dfs)):
       df = self.dfs[i]
@@ -379,6 +405,7 @@ class Preprocessor:
                     con.execute(f"CREATE INDEX IF NOT EXISTS {ix} ON {table}({col});")
 
 preprocor = Preprocessor(label = "VITALSTATUS")
+#preprocor.deleteLeakagePatient()
 #preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
 #print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
 #preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)
