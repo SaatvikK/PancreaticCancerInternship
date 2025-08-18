@@ -39,6 +39,32 @@ class Preprocessor:
     self.dateFeatures = {} # table : feature name
 
   # ================================================== NaNs Handling ================================================== #
+  def deleteLeakagePatient(self):
+    dfname = "patient"
+    if dfname not in self.dfnames:
+      raise ValueError(f"'{dfname}' not found in self.dfnames")
+
+    idx = self.dfnames.index(dfname)
+    df = self.dfs[idx]
+
+    leakageFeatures = [
+      "DEATHCAUSECODE_1A",
+      "DEATHCAUSECODE_1B",
+      "DEATHCAUSECODE_1C",
+      "DEATHCAUSECODE_2",
+      "DEATHCAUSECODE_UNDERLYING",
+      "DEATHLOCATIONCODE",
+      "VITALSTATUSDATE"
+    ]
+
+    # Drop only columns that exist
+    to_drop = [c for c in leakageFeatures if c in df.columns]
+    print(f"Dropping {len(to_drop)} leakage columns from patient:", to_drop)
+    df = df.drop(columns=to_drop)
+
+    self.dfs[idx] = df
+    return df
+
   def findNAs(self, deleteMajMissing = True, fillRestMissing = True, showRatios = True): # deleteMajMissing = Delete Majority (> 50%) Missing - i.e. if the majority of observations are missing, delete the feature.
     for i in range(len(self.dfs)):
       df = self.dfs[i]
@@ -246,6 +272,21 @@ class Preprocessor:
           featureMap = self.mapMaker(df[feature], feature, dfname)
           #print("map for feature", feature, "in df", dfname, ":", featureMap)
           df[feature] = df[feature].map(featureMap)
+      
+      self.dfs[i] = df
+    # delete d4, d5, x5
+    print("Removing D5, D4, and X5 class label names...")
+    print("Remaining class label names:")
+    print(self.deleteClassNames(namesToDel = [2, 3, 4, 5, 6, 7]))
+  
+  def deleteClassNames(self, namesToDel = []): #namesToDel is a list of numbers
+    idx = self.dfnames.index("patient")
+    df = self.dfs[idx]
+    if len(namesToDel) == 0: raise Exception("`namesToDel` list is empty.")
+    mask = ~df[self.label].isin(namesToDel)
+    pruned = df.loc[mask].copy()   # one deep copy is plenty
+    self.dfs[idx] = pruned
+    return pruned[self.label].unique()
 
   # ====================================================================================================================== #
 
@@ -364,6 +405,7 @@ class Preprocessor:
                     con.execute(f"CREATE INDEX IF NOT EXISTS {ix} ON {table}({col});")
 
 preprocor = Preprocessor(label = "VITALSTATUS")
+#preprocor.deleteLeakagePatient()
 #preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
 #print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
 #preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)

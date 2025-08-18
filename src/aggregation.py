@@ -20,6 +20,8 @@ class Aggregator:
     # Copy and rename in one step
     shutil.copy(self.dbPath, working)
 
+  # ============================ SQL COMMANDS ============================ #
+
   # Method to check if the db actually exists.
   def checkDB(self, dbPath):
     try:
@@ -70,6 +72,7 @@ class Aggregator:
     """
     return self.dbRequester(path, query = query, overwrite = True, tableName = table1)
 
+  # ========================= AGGREGATION METHODS ========================= #
   # Aggregates the regimen table to the patient level.
   def regimenPatient(self):
     # This method aggregates rhe regimen table on to the patient level.
@@ -81,6 +84,8 @@ class Aggregator:
         avg(HEIGHT_AT_START_OF_REGIMEN) as AVE_HEIGHT,
         avg(WEIGHT_AT_START_OF_REGIMEN) as AVE_WEIGHT,
         max(INTENT_OF_TREATMENT) as INTENT_OF_TREATMENT,
+        min(DATE_DECISION_TO_TREAT) as FIRST_DECISION_TO_TREAT,
+        max(DATE_DECISION_TO_TREAT) as LAST_DECISION_TO_TREAT,
         min(START_DATE_OF_REGIMEN) as FIRST_START_DATE,
         max(START_DATE_OF_REGIMEN) as LAST_START_DATE,
         COUNT(MERGED_REGIMEN_ID) as NUM_REGIMENS
