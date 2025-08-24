@@ -7,66 +7,54 @@ import aggregation
 import numpy as np
 import sklearn as skl
 import pprint as pp
+import sqlite3 as sql
 
 class Main:
   def __init__(self, dbPath = "../data-v2-working/Data", dbname = "dataset"):
     self.dbPath = dbPath
     self.dbname = dbname
     self.aggor = aggregation.Aggregator(self.dbPath, self.dbname)
-  
-  def splitSet(self, mergedTable: pd.DataFrame, valPerc = 0.1, testPerc = 0.2, trainPerc = 0.7):
-    # 1. Split set into X (features) and Y (target)
-    # 1a. Split into X and Y
-    X = mergedTable.drop(columns=[self.preprocor.label])
-    Y = mergedTable[self.preprocor.label]
-    npX = self.preprocor.convToNumpy(X)
-    npY = self.preprocor.convToNumpy(Y)
-    
-    # 2. First split test from training
-    Xtrain, Xtest, Ytrain, Ytest = skl.model_selection.train_test_split(
-      npX, npY, test_size=testPerc, random_state=42, stratify=npY
-    )
-
-    # 3. Then split validation from training
-    Xtrain, Xval, Ytrain, Yval = skl.model_selection.train_test_split(Xtrain, Ytrain, test_size = valPerc, random_state = 42, stratify = Ytrain)
-
-    return {
-      "train": {"X": Xtrain, "Y": Ytrain},
-      "test": {"X": Xtest, "Y": Ytest},
-      "validation": {"X": Xval, "Y": Yval}
-    }
-
 
   def main(self, projLabel = "VITALSTATUS"):
     # Instantiate a preprocessor
     self.preprocor = preproc.Preprocessor(label = projLabel)
 
-    # Using the aggregator's in-built querier, get the patient table: `select * from patient`
-    patient = self.aggor.dbRequester(self.aggor.workingPath, overwrite = False)
-    
-    # Now aggregate on all selected tables
-    regimen, tumourgene = self.aggregate()
-    
-    # Now join all tables based on PATIENTID:
-    # We choose the `inner` method as we ONLY want patients who have an instance in ALL tables.
-    mergedTable = patient \
-    .merge(regimen, on='PATIENTID', how='left') \
-    .merge(tumourgene, on='PATIENTID', how='left')
-    print("=========== FINAL MERGED TABLE ===========")
-    mergedTable = self.manFillInRegimen(mergedTable)
+    # Aggregrate all tables
+    mergedTable = self.aggregate()
+
+    ############################## DROPPING FEATURES BASED ON RFE FEATURE RANKING ##############################
+    # Drop the last 5 common features, as outlined by feature ranking (main README.md under #badRecallInvestigation)
+    mergedTable.drop(columns=["NUM_TUMOURS",  "LINKNUMBER", "GLEASON_PRIMARY", "AVE_WEIGHT", "GRADE"], inplace = True)
+
+    # Drop the next 5
+    mergedTable.drop(columns=["GLEASON_SECONDARY", "LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"], inplace = True)
     print(mergedTable)
+
+    # write the table to the db for later usage
+    conn = sql.connect("../data-v2-working/Data/dataset_working.db")
+    mergedTable.to_sql("mergedTable", conn, if_exists="append", index=False)  # creates if missing, appends otherwise
+    conn.close()
+
+    ############################## NOW IMPUTE THE MISSING OBSERVATIONS (SOME NULL DUE TO LEFT-AGGREGATION) ##############################
+    mergedTable = self.manFillInRegimen(mergedTable)
     imputer = self.chooseImputer(imputeMethod = "simple")
-    data = self.splitSet(mergedTable)
+    data = self.preprocor.splitSet(mergedTable)
     self.impute(imputer, data)
 
+    ############################## DATA DEBIASING ##############################
+    data["train"]["X"], data["train"]["Y"] = self.preprocor.debias(data["train"]["X"], data["train"]["Y"])
 
+    ############################## RUN MODELS ##############################
+    self.runModels(data)
+
+  def runModels(self, data):
     # Train the models
     print("===================== K NN MODEL =====================")
     knn = models.knnModel(preload = None, neighbours = 5, metric = "manhattan")
     knn.train(data)
     res, Ypred = knn.test(data)
     knn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-
+    """
     print("===================== LRC MODEL =====================")
     lrc = models.lrcModel(preload = None)
     lrc.train(data)
@@ -74,6 +62,7 @@ class Main:
     lrc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
     print("Feature Ranking")
     print("-" * 60)
+    print("LRC Feature Ranking with RFE:")
     selector = skl.feature_selection.RFE(lrc.model, step = 1, n_features_to_select = 1)
     selector.fit(data["train"]["X"], data["train"]["Y"])
     print(selector.ranking_)
@@ -85,20 +74,56 @@ class Main:
     svm.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
     print("Feature Ranking")
     print("-" * 60)
+    print("SVM Feature Ranking with RFE:")
     selector = skl.feature_selection.RFE(svm.model, step = 1, n_features_to_select = 1)
     selector.fit(data["train"]["X"], data["train"]["Y"])
     print(selector.ranking_)
+    """
+    print("===================== DTC MODEL =====================")
+    dtc = models.dtcModel(preload = None)
+    dtc.train(data)
+    res, Ypred = dtc.test(data)
+    dtc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("Feature Ranking")
+    print("-" * 60)
+    print("DTC Feature Ranking with RFE:")
+    selector = skl.feature_selection.RFE(dtc.model, step = 1, n_features_to_select = 1)
+    selector.fit(data["train"]["X"], data["train"]["Y"])
+    print(selector.ranking_)
 
-    #dnn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("===================== RFC MODEL =====================")
+    rfc = models.rfcModel(preload = None)
+    rfc.train(data)
+    res, Ypred = rfc.test(data)
+    rfc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("Feature Ranking")
+    print("-" * 60)
+    print("RFC Feature Ranking with RFE:")
+    selector = skl.feature_selection.RFE(rfc.model, step = 1, n_features_to_select = 1)
+    selector.fit(data["train"]["X"], data["train"]["Y"])
+    print(selector.ranking_)
 
   def aggregate(self):
+    # Using the aggregator's in-built querier, get the patient table: `select * from patient`
+    patient = self.aggor.dbRequester(self.aggor.workingPath, overwrite = False)
+    
+    # Now aggregate on all selected tables
+
     regimen = self.aggor.regimenPatient() # regiment -> patient
     #gene = self.aggor.geneTumour() # gene -> tumour
     #res = self.aggor.joinTables(self.aggor.workingPath, table1 = "tumour", table2 = "gene", common = "TUMOURID")
     # now after gene -> tumour aggregation we can aggregate (gene, tumour) -> patient
-    tumour = self.aggor.tumourPatient() # (gene,tumour) -> patient
-    return [regimen, tumour]
+    tumourgene = self.aggor.tumourPatient() # (gene,tumour) -> patient
+    
 
+    # Now join all tables based on PATIENTID:
+    # We choose the `inner` method as we ONLY want patients who have an instance in ALL tables.
+    mergedTable = patient \
+    .merge(regimen, on='PATIENTID', how='left') \
+    .merge(tumourgene, on='PATIENTID', how='left')
+    print("=========== FINAL MERGED TABLE ===========")
+    return mergedTable
+    
   def chooseImputer(self, imputeMethod = "simple"):
     # Initialize the KNNImputer with k=2 (you can adjust k as needed)
     imputer = None
@@ -148,6 +173,14 @@ class Main:
         { "range": (low, high_or_None), "avg_height": float|None,
           "avg_weight": float|None, "count": int }
       """
+      # first remove all pd.na-type elements from `heights` and `weights`
+      nonaheights, nonaweights = [], []
+      for i in range(len(heights)):
+        if not np.isnan(heights[i]): nonaheights.append(heights[i])
+        if not np.isnan(weights[i]): nonaweights.append(weights[i])
+
+      # overwrite old with new
+      heights, weights = nonaheights, nonaweights
 
       # define bins
       bins = [
@@ -180,30 +213,39 @@ class Main:
           "avg_weight": avgw,
           "count": n,
         })
+      
       return aves
 
+    # We try to get the three columns - but it's possible they've been removed due to feature ranking
+    # So we check if they still exist - if not we just move on and dont run this method.
+    try:
+      ages = df.AGE.values.tolist()
+      heights = df.AVE_HEIGHT.values.tolist()
+      weights = df.AVE_WEIGHT.values.tolist()
 
-    ages = df.AGE.values.tolist()
-    heights = df.AVE_HEIGHT.values.tolist()
-    weights = df.AVE_WEIGHT.values.tolist()
-    averages = findAvePerAge(ages, heights, weights)
+      averages = findAvePerAge(ages, heights, weights)
 
-    df = df.reset_index(drop=True)
+      df = df.reset_index(drop=True)
 
-    for idx, row in df.iterrows():
-      #print(row)
-      for avg in averages:
-        min_age, max_age = avg["range"]
+      for idx, row in df.iterrows():
+        #print(row)
+        for avg in averages:
+          min_age, max_age = avg["range"]
 
-        # Handle no upper limit case
-        if (max_age is None and row.AGE >= min_age) or (min_age <= row.AGE <= max_age):
-          if pd.isna(row.AVE_HEIGHT):
-            df.at[idx, "AVE_HEIGHT"] = avg["avg_height"]
-          if pd.isna(row.AVE_WEIGHT):
-            # Here you can choose BMI=22 or BMI=25
-            df.at[idx, "AVE_WEIGHT"] = avg["avg_weight"]
-          break  # Found the right range, no need to check others
-
+          # Handle no upper limit case
+          if (max_age is None and row.AGE >= min_age) or (min_age <= row.AGE <= max_age):
+            if pd.isna(row.AVE_HEIGHT):
+              df.at[idx, "AVE_HEIGHT"] = avg["avg_height"]
+              #print(df.at[idx, "AVE_HEIGHT"])
+              #print(avg["avg_height"])
+            if pd.isna(row.AVE_WEIGHT):
+              # Here you can choose BMI=22 or BMI=25
+              df.at[idx, "AVE_WEIGHT"] = avg["avg_weight"]
+              #print(df.at[idx, "AVE_WEIGHT"])
+              #print(avg["avg_weight"])
+            break  # Found the right range, no need to check others
+    except:
+      pass
     
     def decToTreat(df, which = "FIRST"):
       colNameTreat = f'{which}_DECISION_TO_TREAT'
@@ -216,9 +258,10 @@ class Main:
 
       df[colNameDateReg].loc[df[colNameDateReg].isna()] = df[colNameTreat] + medianDelay
       return df
-    
-    df = decToTreat(df, which = "FIRST")
-    df = decToTreat(df, which = "LAST")
+    if "FIRST_START_DATE" in df.columns.values and "FIRST_DECISION_TO_TREAT" in df.columns.values:
+      df = decToTreat(df, which = "FIRST")
+    if "LAST_START_DATE" in df.columns.values and "LAST_DECISION_TO_TREAT" in df.columns.values:
+      df = decToTreat(df, which = "LAST")
     return df
 
 mainC = Main()
