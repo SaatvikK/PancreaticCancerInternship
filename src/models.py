@@ -1,7 +1,6 @@
 import pandas as pd
 import numpy as np
 import sklearn as skl
-import knnboundary as boundgraph
 import matplotlib.pyplot as plt
 #import torch
 #import torch.nn as nn
@@ -18,16 +17,21 @@ class Model:
     Xtr, Ytr, Xval, Yval = data["train"]["X"], data["train"]["Y"], data["validation"]["X"], data["validation"]["Y"]#
     classes = np.unique(Ytr)
 
-    if not self.model:
-      raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
+    #if not self.model:
+    #  raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
 
     accuracies = []
-    if self.algorithm == "knn":
+    if self.algorithm in ["knn", "dtc", "rfc"]:
+      # recombine the training and validation sets as these models cant use validation sets
+      Xtr = np.vstack((Xtr, Xval))
+      Ytr = np.hstack((Ytr, Yval))
+      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
       self.model.fit(Xtr, Ytr)
       acc = skl.metrics.accuracy_score(Yval, self.model.predict(Xval))
       accuracies = [acc] * epochs
 
     else:
+      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
       for epoch in range(epochs):
         if epoch == 0:
           self.model.partial_fit(Xtr, Ytr, classes)
@@ -132,9 +136,6 @@ class knnModel(Model):
         n_neighbors=int(neighbours), metric=metric
       )
 
-  def plotClassBound(self, X, Y, featureX, featureY, target):
-    boundgraph.plotBounds(self.model, X, Y, featureX, featureY)
-
   # Convenience method (static so it can be reused elsewhere)
   @staticmethod
   def make_knn(neighbours=5, metric="manhattan"):
@@ -168,90 +169,29 @@ class svmModel(Model):
     # Convenience method (static so it can be reused elsewhere)
     @staticmethod
     def makeSVM():
-        return skl.linear_model.LogisticRegression()    
+        return skl.linear_model.LogisticRegression()
 
+class dtcModel(Model):
+  def __init__(self, preload = None):
+    super().__init__(preload = preload, algorithm = "dtc")
+    # Only build a new estimator if nothing was pre‑loaded
+    if self.model is None:
+      self.model = skl.tree.DecisionTreeClassifier()
 
-############ DNN ############
-"""
-class dnnModel(nn.Module, Model):
-  def __init__(self, inputSize, hiddenSizes, outputSize, name = "DNN", preload = None):
-    self.inputSize = inputSize
-    self.hiddenSizes = hiddenSizes
-    self.outputSize = outputSize
-    self.name = name
+    # Convenience method (static so it can be reused elsewhere)
+    @staticmethod
+    def makeDTC():
+        return skl.tree.DecisionTreeClassifier()
 
-    nn.Module.__init__(self)
-    Model.__init__(preload = preload, algorithm = "dnn") # Model not passed into baseModel class to avoid reaching the maximum recursion depth.
+class rfcModel(Model):
+  def __init__(self, preload = None):
+    super().__init__(preload = preload, algorithm = "dtc")
+    # Only build a new estimator if nothing was pre‑loaded
+    if self.model is None:
+      self.model = skl.ensemble.RandomForestClassifier()
 
-    # Create a list to hold all layers
-    layers = []
-    # Define the layer sizes: start with inputSize, followed by your hidden layer sizes
-    layer_sizes = [self.inputSize] + self.hiddenSizes
+    # Convenience method (static so it can be reused elsewhere)
+    @staticmethod
+    def makeDTC():
+        return skl.ensemble.RandomForestClassifier()
 
-    # Loop to create each hidden layer with a ReLU activation
-    for i in range(len(layer_sizes) - 1):
-      layers.append(nn.Linear(layer_sizes[i], layer_sizes[i + 1]))
-      layers.append(nn.Sigmoid())
-
-    # Add the output layer (we don't usually follow the output layer with an activation like ReLU
-    # if you're performing classification with CrossEntropyLoss, as it expects raw logits)
-    layers.append(nn.Linear(hiddenSizes[-1], self.outputSize))
-    
-    # Use nn.Sequential to combine all the layers into a single network
-    self.network = nn.Sequential(*layers)
-
-  def forward(self, x):
-    # The forward method defines how the data passes through the network layers
-    return self.network(x)
-
-  def predict(self, Xtest):
-    Xtest = torch.tensor(Xtest.values, dtype=torch.float32)
-    self.eval() # setting model to evaluation mode
-    with torch.no_grad():
-      outputs = self(Xtest)
-      _, preds = torch.max(outputs, 1)
-    
-    preds = preds.numpy()
-    print(type(preds))
-    #predsdf = pd.DataFrame(preds, columns=["diagnosis"])
-    return preds
-
-  def validationTest(self, Xval, Yval):
-    preds = self.predict(Xval)
-    accuracy = skl.metrics.accuracy_score(Yval, preds)
-  
-  def dnnTrain(self, data, noEpochs = 5, α = 0.001):
-    Xtr, Ytr, Xval, Yval = data["train"]["X"], data["train"]["Y"], data["validation"]["X"], data["validation"]["Y"]
-    self.criterion = nn.CrossEntropyLoss()
-    self.optimizer = optim.RMSprop(self.parameters(), lr=α)
-
-    self.accuracies = []
-    for epoch in range(noEpochs):  # Training for 5 epochs
-      # Simulated dummy data (replace these with actual data during implementation)
-      inputs = torch.tensor(Xtr.values, dtype=torch.float32)
-      labels = torch.tensor(Ytr.values, dtype=torch.long)
-
-      # Zero the gradients from the previous iteration
-      self.optimizer.zero_grad()
-      
-      # Forward pass: Compute predicted outputs by passing inputs to the model
-      outputs = self(inputs)
-      
-      # Calculate the loss
-      loss = self.criterion(outputs, labels)
-      
-      # Backward pass: Compute gradient of the loss with respect to model parameters
-      loss.backward()
-      
-      # Update parameters
-      self.optimizer.step()
-      
-      # Print the loss for each epoch to track progress
-      print(f"Epoch {epoch + 1}, Loss: {loss.item():.4f}")
-
-      # now do validation for this epoch
-      self.accuracies.append(self.validationTest(Xval, Yval))
-    
-    self.graphEpochAcc(self.accuracies, epochs = noEpochs)
-    return [True, None, self]
-"""

@@ -6,6 +6,7 @@ import random as rand
 import sqlite3 as sql
 import pathlib as pali
 import json
+import imblearn as debias
 
 class Preprocessor:
   def __init__(self, dirpath = "../data-v2-working/Data", label = ""):
@@ -38,6 +39,30 @@ class Preprocessor:
     # Date cols
     self.dateFeatures = {} # table : feature name
 
+  # ================================================== Data Splitting ================================================== #
+  def splitSet(self, mergedTable: pd.DataFrame, valPerc = 0.1, testPerc = 0.2, trainPerc = 0.7):
+    # 1. Split set into X (features) and Y (target)
+    # 1a. Split into X and Y
+    X = mergedTable.drop(columns=[self.label])
+    Y = mergedTable[self.label]
+    npX = self.convToNumpy(X)
+    npY = self.convToNumpy(Y)
+    
+    # 2. First split test from training
+    Xtrain, Xtest, Ytrain, Ytest = skl.model_selection.train_test_split(
+      npX, npY, test_size=testPerc, random_state=42, stratify=npY
+    )
+
+    # 3. Then split validation from training
+    Xtrain, Xval, Ytrain, Yval = skl.model_selection.train_test_split(Xtrain, Ytrain, test_size = valPerc, random_state = 42, stratify = Ytrain)
+
+    return {
+      "train": {"X": Xtrain, "Y": Ytrain},
+      "test": {"X": Xtest, "Y": Ytest},
+      "validation": {"X": Xval, "Y": Yval}
+    }
+
+
   # ================================================== NaNs Handling ================================================== #
   def deleteLeakagePatient(self):
     dfname = "patient"
@@ -54,7 +79,8 @@ class Preprocessor:
       "DEATHCAUSECODE_2",
       "DEATHCAUSECODE_UNDERLYING",
       "DEATHLOCATIONCODE",
-      "VITALSTATUSDATE"
+      "VITALSTATUSDATE",
+      "GENDER"
     ]
 
     # Drop only columns that exist
@@ -325,6 +351,17 @@ class Preprocessor:
         print(df[feature])
   # ====================================================================================================================== #
   
+  # ==================================================== Data Debiasing ================================================== #
+  def debias(self, npX, npY, method = "adasyn"):
+    # `method` one of [`adasyn`, `smote`]
+    algo = debias.over_sampling.ADASYN()
+    if method == "smote": algo = debias.over_sampling.SMOTE()
+
+    return algo.fit_resample(npX, npY)
+
+  # ====================================================================================================================== #
+
+  # ======================================================== Other ======================================================= #
   def saveToCSV(self):
     try:
       for fname in glob.glob(self.dirpath + "/*"):
@@ -404,50 +441,52 @@ class Preprocessor:
                     ix = f"idx_{table}_{col}"
                     con.execute(f"CREATE INDEX IF NOT EXISTS {ix} ON {table}({col});")
 
-preprocor = Preprocessor(label = "VITALSTATUS")
-#preprocor.deleteLeakagePatient()
-#preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
-#print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
-#preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)
-#preprocor.mapper()
-#preprocor.findDateCols()
-#preprocor.convToUnix()
-"""
-preprocor.featureSelection(method = "manual", manualFeatures = {
-  "patient": [
-    "PATIENTID",
-    "ETHNICITY",
-    "DEATHCAUSECODE_1A",
-    "DEATHCAUSECODE_1B",
-    "DEATHCAUSECODE_1C",
-    "DEATHCAUSECODE_2",
-    "VITALSTATUS"
-  ],
-  "tumour": [
-    "TUMOURID",
-    "PATIENTID",
-    "T_BEST",
-    "N_BEST",
-    "M_BEST",
-    "STAGE_BEST",
-    "GRADE",
-    "AGE",
-    "GLEASON_PRIMARY",
-    "GLEASON_SECONDARY"
-  ],
-  "regimen": [
-    "ENCORE_PATIENT_ID",
-    "MERGED_REGIMEN_ID",
-    "HEIGHT_AT_START_OF_REGIMEN",
-    "WEIGHT_AT_START_OF_REGIMEN",
-    "INTENT_OF_TREATMENT",
-    "START_DATE_OF_REGIMEN"
-  ]
-})
-"""
-#preprocor.printFeatType()
-#preprocor.saveToCSV()
-preprocor.convToSQL()
 
-#import pprint
-#pprint.pprint(preprocor.buildFeatureDict())
+def run():
+  ## This method is to run this preprocess.py script on its own - it's the initial data preprocessing steps (to convert to sql, discrete mapping, unix etc)
+  
+
+  preprocor = Preprocessor(label = "VITALSTATUS")
+  #preprocor.deleteLeakagePatient()
+  #preprocor.findNAs(deleteMajMissing = True, fillRestMissing = True, showRatios = True)
+  #print("drfhigodrfhgndfsohgisdoihgnsdftiohsfhtghjisdfgoijhnsdpfohpsjodfgnpjoxdfgnjopsfgnop[jsfgjopnsfgjop[nsfdgpjo[nsfdo[jgn[sjofdnj[oksdfgfnjo[sdfgno[]]]]]]]]")
+  #preprocor.findNAs(deleteMajMissing = False, fillRestMissing = False, showRatios = False)
+  #preprocor.mapper()
+  #preprocor.findDateCols()
+  #preprocor.convToUnix()
+  """
+  preprocor.featureSelection(method = "manual", manualFeatures = {
+    "patient": [
+      "PATIENTID",
+      "ETHNICITY",
+      "DEATHCAUSECODE_1A",
+      "DEATHCAUSECODE_1B",
+      "DEATHCAUSECODE_1C",
+      "DEATHCAUSECODE_2",
+      "VITALSTATUS"
+    ],
+    "tumour": [
+      "TUMOURID",
+      "PATIENTID",
+      "T_BEST",
+      "N_BEST",
+      "M_BEST",
+      "STAGE_BEST",
+      "GRADE",
+      "AGE",
+      "GLEASON_PRIMARY",
+      "GLEASON_SECONDARY"
+    ],
+    "regimen": [
+      "ENCORE_PATIENT_ID",
+      "MERGED_REGIMEN_ID",
+      "HEIGHT_AT_START_OF_REGIMEN",
+      "WEIGHT_AT_START_OF_REGIMEN",
+      "INTENT_OF_TREATMENT",
+      "START_DATE_OF_REGIMEN"
+    ]
+  })
+  """
+  #preprocor.printFeatType()
+  #preprocor.saveToCSV()
+  preprocor.convToSQL()
