@@ -2,10 +2,7 @@ import pandas as pd
 import numpy as np
 import sklearn as skl
 import matplotlib.pyplot as plt
-#import torch
-#import torch.nn as nn
-#import torch.optim as optim
-#import tabulate
+import xgboost as xgb
 
 class Model:
   def __init__(self, preload = None, algorithm = "lrc"): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
@@ -21,17 +18,29 @@ class Model:
     #  raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
 
     accuracies = []
-    if self.algorithm in ["knn", "dtc", "rfc"]:
+    print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
+    if self.algorithm in ["knn", "dtc", "rfc", "nbc"]:
       # recombine the training and validation sets as these models cant use validation sets
       Xtr = np.vstack((Xtr, Xval))
       Ytr = np.hstack((Ytr, Yval))
-      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
       self.model.fit(Xtr, Ytr)
       acc = skl.metrics.accuracy_score(Yval, self.model.predict(Xval))
       accuracies = [acc] * epochs
 
+    elif self.algorithm == "xgb":
+      self.model.set_params(
+        n_estimators=1000,            # an upper bound
+        eval_metric="error"           # classification error; accuracy = 1 - error
+      )
+      self.model.fit(Xtr, Ytr, eval_set=[(Xval, Yval)], verbose = True)
+
+      # Get evals per round of xgb
+      evals = self.model.evals_result_ if hasattr(self.model, "evals_result_") else self.model.evals_result()
+      val_err = evals["validation_0"]["error"]
+      accuracies = [1.0 - e for e in val_err] # find accuracies
+      self.graphEpochAcc(accuracies, len(accuracies)) # graph
+
     else:
-      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
       for epoch in range(epochs):
         if epoch == 0:
           self.model.partial_fit(Xtr, Ytr, classes)
@@ -192,6 +201,29 @@ class rfcModel(Model):
 
     # Convenience method (static so it can be reused elsewhere)
     @staticmethod
-    def makeDTC():
+    def makeRFC():
         return skl.ensemble.RandomForestClassifier()
 
+class xgbModel(Model):
+  def __init__(self, preload = None):
+    super().__init__(preload = preload, algorithm = "xgb")
+    # Only build a new estimator if nothing was pre‑loaded
+    if self.model is None:
+      self.model = xgb.XGBClassifier(tree_method="hist", early_stopping_rounds=2)
+
+    # Convenience method (static so it can be reused elsewhere)
+    @staticmethod
+    def makXGB():
+        return xgb.XGBClassifier(tree_method="hist", early_stopping_rounds=2)
+    
+class nbcModel(Model):
+  def __init__(self, preload = None):
+    super().__init__(preload = preload, algorithm = "nbc")
+    # Only build a new estimator if nothing was pre‑loaded
+    if self.model is None:
+      self.model = skl.naive_bayes.CategoricalNB()
+
+    # Convenience method (static so it can be reused elsewhere)
+    @staticmethod
+    def makXGB():
+        return skl.naive_bayes.CategoricalNB()
