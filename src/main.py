@@ -1,9 +1,10 @@
 # hi
 import sqlite3 as sql
 import pandas as pd
-import preprocess as preproc
-import models
-import aggregation
+import preprocessing.preprocess as preproc
+import models.baseModel as baseModel
+import models.models as models
+import preprocessing.aggregation as aggregation
 import numpy as np
 import sklearn as skl
 import pprint as pp
