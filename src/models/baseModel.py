@@ -18,10 +18,10 @@ class Model:
 
     accuracies = []
     print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
-    if self.algorithm in ["knn", "dtc", "rfc", "nbc"]:
+    if self.algorithm in ["dtc", "rfc", "nbc"]:
       # recombine the training and validation sets as these models cant use validation sets
-      Xtr = np.vstack((Xtr, Xval))
-      Ytr = np.hstack((Ytr, Yval))
+      #Xtr = np.vstack((Xtr, Xval))
+      #Ytr = np.hstack((Ytr, Yval))
       self.model.fit(Xtr, Ytr)
       acc = skl.metrics.accuracy_score(Yval, self.model.predict(Xval))
       accuracies = [acc] * epochs

@@ -9,7 +9,7 @@ import json
 import imblearn as debias
 
 class Preprocessor:
-  def __init__(self, dirpath = "../data-v2-working/Data", label = ""):
+  def __init__(self, dirpath = "../../data-v2-working/Data", label = ""):
     if dirpath[len(dirpath)-1] in ["/", "\\"]: raise Exception("`dirpath` cannot end with / or \\.")
     self.dirpath = dirpath
     self.dfs, self.dfnames = self.openCSVs()
@@ -45,12 +45,12 @@ class Preprocessor:
     # 1a. Split into X and Y
     X = mergedTable.drop(columns=[self.label])
     Y = mergedTable[self.label]
-    npX = self.convToNumpy(X)
-    npY = self.convToNumpy(Y)
+    #npX = self.convToNumpy(X)
+    #npY = self.convToNumpy(Y)
     
     # 2. First split test from training
     Xtrain, Xtest, Ytrain, Ytest = skl.model_selection.train_test_split(
-      npX, npY, test_size=testPerc, random_state=42, stratify=npY
+      X, Y, test_size=testPerc, random_state=42, stratify=Y
     )
 
     # 3. Then split validation from training
@@ -64,6 +64,32 @@ class Preprocessor:
 
 
   # ================================================== NaNs Handling ================================================== #
+  @staticmethod
+  def chooseImputer(imputeMethod = "simple"):
+    # Initialize the KNNImputer with k=2 (you can adjust k as needed)
+    imputer = None
+    match(imputeMethod):
+      case "simple":
+        imputer = skl.impute.SimpleImputer(strategy="mean")
+      case "knn":
+        imputer = skl.impute.KNNImputer(n_neighbors=2)
+      case "iter":
+        imputer = skl.impute.IterativeImputer(initial_strategy = "mean")
+      case _:
+        raise Exception("Please choose valid imputation option.")
+    
+    return imputer
+  
+  @staticmethod
+  def impute(imputer, data):
+    imputer.fit(data["train"]["X"]) # ONLY fit the imputer to X train
+
+    # Transform each set
+    for split in ["train", "validation", "test"]:
+      data[split]["X"] = imputer.transform(data[split]["X"])
+    
+    return data
+  
   def deleteLeakagePatient(self):
     dfname = "patient"
     if dfname not in self.dfnames:
@@ -273,7 +299,7 @@ class Preprocessor:
     # Write map to file for referencing later.
     data = {}
     try:
-      with open("../data-v2-working/maps/" + tablename + ".json") as JsonFile:
+      with open("../../data-v2-working/maps/" + tablename + ".json") as JsonFile:
         data = json.load(JsonFile)
     except FileNotFoundError as e:
       data = {}
@@ -281,7 +307,7 @@ class Preprocessor:
       data = {}
     
     data[fname] = mapDict
-    with open("../data-v2-working/maps/" + tablename + ".json", 'w') as outfile:
+    with open("../../data-v2-working/maps/" + tablename + ".json", 'w') as outfile:
       json.dump(data, outfile)
 
     return mapDict
@@ -352,13 +378,39 @@ class Preprocessor:
   # ====================================================================================================================== #
   
   # ==================================================== Data Debiasing ================================================== #
-  def debias(self, npX, npY, method = "adasyn"):
+  def debias(self, npX, npY, method = "adasyn", cat = None):
     # `method` one of [`adasyn`, `smote`]
     algo = debias.over_sampling.ADASYN()
     if method == "smote": algo = debias.over_sampling.SMOTE()
+    if method  == "smote-nc":
+      if cat == None:
+        return Exception("Please provide a list of categorical features if you want to use SMOTE-NC: https://imbalanced-learn.org/stable/references/generated/imblearn.over_sampling.SMOTENC.html")
+      algo = debias.over_sampling.SMOTENC(cat)
 
     return algo.fit_resample(npX, npY)
+  
+  @staticmethod
+  def normalise(Xtr, Xval, Xtest, dfInfo):
+    #numCols = ["AGE","AVE_HEIGHT","AVE_WEIGHT", "delay_days", ...]
+    #catCols = ["ETHNICITY","GRADE","MAX_T_BEST", ...]  # cast these to 'category' first
+    scaler = skl.compose.ColumnTransformer(
+      transformers = [
+        ("num", skl.preprocessing.StandardScaler(), dfInfo[1]),          # scale ONLY numerics
+        ("cat", skl.preprocessing.OneHotEncoder(handle_unknown="ignore"), dfInfo[2]),  # encode cats, no scaling
+      ],
+      remainder="drop"
+    )
+    Xtr = scaler.fit_transform(Xtr)
+    Xval = scaler.transform(Xval)
+    Xtest = scaler.transform(Xtest)
 
+    # VERIFY THAT SCALING WORKED: numeric only
+    print("VERIFY SCALING WORKED:")
+    num_scaler = scaler.named_transformers_["num"]
+    print("Numeric means ~0:",  np.round(num_scaler.mean_, 4))
+    print("Numeric stds  ~1:",  np.round(num_scaler.scale_, 4))  # scale_ = train std
+
+    return [Xtr, Xval, Xtest]
   # ====================================================================================================================== #
 
   # ======================================================== Other ======================================================= #

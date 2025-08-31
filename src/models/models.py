@@ -91,9 +91,9 @@ class nbcModel(Model):
     super().__init__(preload = preload, algorithm = "nbc")
     # Only build a new estimator if nothing was pre‑loaded
     if self.model is None:
-      self.model = skl.naive_bayes.CategoricalNB()
+      self.model = skl.naive_bayes.MultinomialNB()
 
     # Convenience method (static so it can be reused elsewhere)
     @staticmethod
     def makXGB():
-        return skl.naive_bayes.CategoricalNB()
+        return skl.naive_bayes.MultinomialNB()
