@@ -2,10 +2,6 @@ import pandas as pd
 import numpy as np
 import sklearn as skl
 import matplotlib.pyplot as plt
-#import torch
-#import torch.nn as nn
-#import torch.optim as optim
-#import tabulate
 
 class Model:
   def __init__(self, preload = None, algorithm = "lrc"): # algorithm = one of ["lrc", "knn", "svm", "nbc"], preload = Some SKL model if want.
@@ -21,17 +17,29 @@ class Model:
     #  raise Exception("Please create the model first by calling `initModel(algorithm: str, preLoad)`")
 
     accuracies = []
-    if self.algorithm in ["knn", "dtc", "rfc"]:
+    print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
+    if self.algorithm in ["dtc", "rfc", "nbc"]:
       # recombine the training and validation sets as these models cant use validation sets
-      Xtr = np.vstack((Xtr, Xval))
-      Ytr = np.hstack((Ytr, Yval))
-      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
+      #Xtr = np.vstack((Xtr, Xval))
+      #Ytr = np.hstack((Ytr, Yval))
       self.model.fit(Xtr, Ytr)
       acc = skl.metrics.accuracy_score(Yval, self.model.predict(Xval))
       accuracies = [acc] * epochs
 
+    elif self.algorithm == "xgb":
+      self.model.set_params(
+        n_estimators=1000,            # an upper bound
+        eval_metric="error"           # classification error; accuracy = 1 - error
+      )
+      self.model.fit(Xtr, Ytr, eval_set=[(Xval, Yval)], verbose = True)
+
+      # Get evals per round of xgb
+      evals = self.model.evals_result_ if hasattr(self.model, "evals_result_") else self.model.evals_result()
+      val_err = evals["validation_0"]["error"]
+      accuracies = [1.0 - e for e in val_err] # find accuracies
+      self.graphEpochAcc(accuracies, len(accuracies)) # graph
+
     else:
-      print(f"TRAINING {self.algorithm} MODEL WITH {Xtr.shape[0]} INSTANCES...")
       for epoch in range(epochs):
         if epoch == 0:
           self.model.partial_fit(Xtr, Ytr, classes)
@@ -123,75 +131,3 @@ class Model:
     print("\n🔀  Confusion matrix (pandas)")
     print("-" * 60)
     print(cm_df.to_string())
-
-class knnModel(Model):
-  def __init__(self, preload = None, neighbours = 5, metric = "manhattan"):
-    super().__init__(preload=preload, algorithm = "knn")
-    # Only build a new estimator if nothing was pre‑loaded
-    if self.model is None:
-
-      self.neighbours = neighbours
-      self.metric = metric
-      self.model = skl.neighbors.KNeighborsClassifier(
-        n_neighbors=int(neighbours), metric=metric
-      )
-
-  # Convenience method (static so it can be reused elsewhere)
-  @staticmethod
-  def make_knn(neighbours=5, metric="manhattan"):
-      return skl.neighbors.KNeighborsClassifier(
-          n_neighbors=int(neighbours), metric=metric
-      )
-  
-class lrcModel(Model):
-  def __init__(self, preload = None):
-    super().__init__(preload=preload, algorithm = "lrc")
-    # Only build a new estimator if nothing was pre‑loaded
-    if self.model is None:
-
-      self.model = skl.linear_model.SGDClassifier(loss = "log_loss", max_iter = 1, learning_rate = "optimal")
-
-  # Convenience method (static so it can be reused elsewhere)
-  @staticmethod
-  def makeLRC():
-      return skl.linear_model.LogisticRegression()
-
-class svmModel(Model):
-  def __init__(self, preload = None):
-    super().__init__(preload = preload, algorithm = "svm")
-    # Only build a new estimator if nothing was pre‑loaded
-    if self.model is None:
-
-      # USING SGDCLASSIFIER WITH HINGE LOSS IS EQUIVALENT TO A LINEAR SVM.
-      # We use SGDClassifier and hinge loss in order to have the `partial_fit` function - which allows us to record the learning curves.
-      self.model = skl.linear_model.SGDClassifier(loss = "hinge", max_iter = 1, learning_rate = "optimal", average = True)
-
-    # Convenience method (static so it can be reused elsewhere)
-    @staticmethod
-    def makeSVM():
-        return skl.linear_model.LogisticRegression()
-
-class dtcModel(Model):
-  def __init__(self, preload = None):
-    super().__init__(preload = preload, algorithm = "dtc")
-    # Only build a new estimator if nothing was pre‑loaded
-    if self.model is None:
-      self.model = skl.tree.DecisionTreeClassifier()
-
-    # Convenience method (static so it can be reused elsewhere)
-    @staticmethod
-    def makeDTC():
-        return skl.tree.DecisionTreeClassifier()
-
-class rfcModel(Model):
-  def __init__(self, preload = None):
-    super().__init__(preload = preload, algorithm = "dtc")
-    # Only build a new estimator if nothing was pre‑loaded
-    if self.model is None:
-      self.model = skl.ensemble.RandomForestClassifier()
-
-    # Convenience method (static so it can be reused elsewhere)
-    @staticmethod
-    def makeDTC():
-        return skl.ensemble.RandomForestClassifier()
-

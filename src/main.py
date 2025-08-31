@@ -1,19 +1,51 @@
 # hi
 import sqlite3 as sql
 import pandas as pd
-import preprocess as preproc
-import models
-import aggregation
+import preprocessing.preprocess as preproc
+import models.baseModel as baseModel
+import models.models as models
+import preprocessing.aggregation as aggregation
 import numpy as np
 import sklearn as skl
 import pprint as pp
-import sqlite3 as sql
 
 class Main:
   def __init__(self, dbPath = "../data-v2-working/Data", dbname = "dataset"):
     self.dbPath = dbPath
     self.dbname = dbname
     self.aggor = aggregation.Aggregator(self.dbPath, self.dbname)
+  
+  def noteFeatTypes(self, 
+                    dfNoY, 
+                    forcedCatFeatures = None # these are features that we manually set to categorical
+                  ):
+    # Justification for this method:
+    # At the time of writing this, the pipeline is impute -> debias -> scale
+    # Problem is, the scaler (ColumnTransform) uses pandas dataframes in order to identify the categorical features (and ignore them).
+    # However, imputer & debias output numpy only.
+    # So we save the relevant dataframe information before doing anything so it can be passed to the scaler later.
+
+    df = dfNoY
+    features = df.columns.tolist()
+
+    # guess the column by dtype
+    numericalFeats = df.select_dtypes(include = [np.number]).columns.tolist()
+    numericalFeatsSet = set(numericalFeats)
+    categoricalFeats = [feature for feature in features if feature not in numericalFeatsSet]
+    categoricalFeatsSet = set(categoricalFeats)
+
+    # Now we loop through numericalFeats and if there's any feature in there that's also in forcedCatFeatures - we know it's actually categorical
+    # and so move it to categoricalFeats
+    for feature in numericalFeatsSet:
+      if feature in forcedCatFeatures:
+        numericalFeats.remove(feature)
+        categoricalFeats.append(feature)
+
+    # Save column indices for later NumPy steps
+    colToIdx = {c: i for i, c in enumerate(features)}
+    numericalIdx = [colToIdx[c] for c in numericalFeats]
+    categoricalIdx = [colToIdx[c] for c in categoricalFeats]
+    return [colToIdx, numericalIdx, categoricalIdx]
 
   def main(self, projLabel = "VITALSTATUS"):
     # Instantiate a preprocessor
@@ -23,11 +55,15 @@ class Main:
     mergedTable = self.aggregate()
 
     ############################## DROPPING FEATURES BASED ON RFE FEATURE RANKING ##############################
+    # Drop unncessary features for ML
+    mergedTable.drop(columns=["PATIENTID", "LINKNUMBER"], inplace = True)
     # Drop the last 5 common features, as outlined by feature ranking (main README.md under #badRecallInvestigation)
-    mergedTable.drop(columns=["NUM_TUMOURS",  "LINKNUMBER", "GLEASON_PRIMARY", "AVE_WEIGHT", "GRADE"], inplace = True)
+    # "NUM_TUMOURS", "GLEASON_PRIMARY", "AVE_WEIGHT", "GRADE"
+    mergedTable.drop(columns=["NUM_TUMOURS", "AVE_WEIGHT", "GRADE"], inplace = True)
 
     # Drop the next 5
-    mergedTable.drop(columns=["GLEASON_SECONDARY", "LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"], inplace = True)
+    # "GLEASON_SECONDARY", "LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"
+    mergedTable.drop(columns=["LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"], inplace = True)
     print(mergedTable)
 
     # write the table to the db for later usage
@@ -35,26 +71,57 @@ class Main:
     mergedTable.to_sql("mergedTable", conn, if_exists="append", index=False)  # creates if missing, appends otherwise
     conn.close()
 
+    # now record dataframe data before impute and debias convert mergedTable df to np array:
+    dfInfo = self.noteFeatTypes(
+      mergedTable.drop(columns=[self.preprocor.label]), 
+      forcedCatFeatures = set(c for c in mergedTable.drop(columns=[self.preprocor.label]).columns 
+                              if c not in { "AGE","AVE_HEIGHT","AVE_WEIGHT", "FIRST_DECISION_TO_TREAT", "LAST_DECISION_TO_TREAT",
+                                           "FIRST_START_DATE", "LAST_START_DATE" }
+      )
+      # ^^ because all variables are categorical other than AGE HEIGHT and WEIGHT
+      # Add all columns in mergedTable to forcedCatFeatures as long as the feature is not in the set provided
+    )
+    print("dfInfo:")
+    print(len(dfInfo[1]))
+    print(len(dfInfo[2]))
+
     ############################## NOW IMPUTE THE MISSING OBSERVATIONS (SOME NULL DUE TO LEFT-AGGREGATION) ##############################
     mergedTable = self.manFillInRegimen(mergedTable)
-    imputer = self.chooseImputer(imputeMethod = "simple")
+    imputer = preproc.Preprocessor.chooseImputer(imputeMethod = "simple")
     data = self.preprocor.splitSet(mergedTable)
-    self.impute(imputer, data)
+    data = preproc.Preprocessor.impute(imputer, data)
+
 
     ############################## DATA DEBIASING ##############################
-    data["train"]["X"], data["train"]["Y"] = self.preprocor.debias(data["train"]["X"], data["train"]["Y"])
+    # Some features are categorical, some numerical, so use imblearn's SMOTE-NC:
+    data["train"]["X"], data["train"]["Y"] = self.preprocor.debias(data["train"]["X"], data["train"]["Y"], method = "smote", cat = dfInfo[2])
+
+    # normalise / scale / one hot encode
+    data["train"]["X"], data["validation"]["X"], data["test"]["X"] = preproc.Preprocessor.normalise(
+      data["train"]["X"], data["validation"]["X"], data["test"]["X"],
+      dfInfo
+    )
+
+    print("FINAL FINAL FINAL")
+    print(data["train"]["X"].shape[1])
 
     ############################## RUN MODELS ##############################
+    # convert data to np arrays
+    #data["train"]["X"], data["train"]["Y"] = preproc.Preprocessor.convToNumpy(data["train"]["X"]), preproc.Preprocessor.convToNumpy(data["train"]["Y"])
+    #data["validation"]["X"], data["validation"]["Y"] = preproc.Preprocessor.convToNumpy(data["validation"]["X"]), preproc.Preprocessor.convToNumpy(data["validation"]["Y"])
+    #data["test"]["X"], data["test"]["Y"] = preproc.Preprocessor.convToNumpy(data["test"]["X"]), preproc.Preprocessor.convToNumpy(data["test"]["Y"])
+    
     self.runModels(data)
 
   def runModels(self, data):
     # Train the models
+    """
     print("===================== K NN MODEL =====================")
     knn = models.knnModel(preload = None, neighbours = 5, metric = "manhattan")
     knn.train(data)
     res, Ypred = knn.test(data)
     knn.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-    """
+
     print("===================== LRC MODEL =====================")
     lrc = models.lrcModel(preload = None)
     lrc.train(data)
@@ -88,8 +155,8 @@ class Main:
     print("-" * 60)
     print("DTC Feature Ranking with RFE:")
     selector = skl.feature_selection.RFE(dtc.model, step = 1, n_features_to_select = 1)
-    selector.fit(data["train"]["X"], data["train"]["Y"])
-    print(selector.ranking_)
+    #selector.fit(data["train"]["X"], data["train"]["Y"])
+    #print(selector.ranking_)
 
     print("===================== RFC MODEL =====================")
     rfc = models.rfcModel(preload = None)
@@ -100,15 +167,40 @@ class Main:
     print("-" * 60)
     print("RFC Feature Ranking with RFE:")
     selector = skl.feature_selection.RFE(rfc.model, step = 1, n_features_to_select = 1)
-    selector.fit(data["train"]["X"], data["train"]["Y"])
-    print(selector.ranking_)
+    #selector.fit(data["train"]["X"], data["train"]["Y"])
+    #print(selector.ranking_)
+    
+    print("===================== XGB MODEL =====================")
+    xgb = models.xgbModel(preload = None)
+    xgb.train(data)
+    res, Ypred = xgb.test(data)
+    xgb.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    print("Feature Ranking")
+    print("-" * 60)
+    #print("RFC Feature Ranking with RFE:")
+    #selector = skl.feature_selection.RFE(xgb.model, step = 1, n_features_to_select = 1)
+    #selector.fit(data["train"]["X"], data["train"]["Y"], )
+    #print(selector.ranking_)
+
+    #print("===================== NBC MODEL =====================")
+    #nbc = models.nbcModel(preload = None)
+    #nbc.train(data)
+    #res, Ypred = nbc.test(data)
+    #nbc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
+    #print("Feature Ranking")
+    #print("-" * 60)
+    #print("RFC Feature Ranking with RFE:")
+    #selector = skl.feature_selection.RFE(nbc.model, step = 1, n_features_to_select = 1)
+    #selector.fit(data["train"]["X"], data["train"]["Y"], )
+    #print(selector.ranking_)
 
   def aggregate(self):
     # Using the aggregator's in-built querier, get the patient table: `select * from patient`
     patient = self.aggor.dbRequester(self.aggor.workingPath, overwrite = False)
     
     # Now aggregate on all selected tables
-
+    outcome = self.aggor.outcomeRegimen()
+    res = self.aggor.joinTables(self.aggor.workingPath, table1 = "regimen", table2 = "outcome", common = "MERGED_REGIMEN_ID")
     regimen = self.aggor.regimenPatient() # regiment -> patient
     #gene = self.aggor.geneTumour() # gene -> tumour
     #res = self.aggor.joinTables(self.aggor.workingPath, table1 = "tumour", table2 = "gene", common = "TUMOURID")
@@ -123,30 +215,6 @@ class Main:
     .merge(tumourgene, on='PATIENTID', how='left')
     print("=========== FINAL MERGED TABLE ===========")
     return mergedTable
-    
-  def chooseImputer(self, imputeMethod = "simple"):
-    # Initialize the KNNImputer with k=2 (you can adjust k as needed)
-    imputer = None
-    match(imputeMethod):
-      case "simple":
-        imputer = skl.impute.SimpleImputer(strategy="mean")
-      case "knn":
-        imputer = skl.impute.KNNImputer(n_neighbors=2)
-      case "iter":
-        imputer = skl.impute.IterativeImputer(initial_strategy = "mean")
-      case _:
-        raise Exception("Please choose valid imputation option.")
-    
-    return imputer
-  
-  def impute(self, imputer, data):
-    imputer.fit(data["train"]["X"]) # ONLY fit the imputer to X train
-
-    # Transform each set
-    for split in ["train", "validation", "test"]:
-      data[split]["X"] = imputer.transform(data[split]["X"])
-    
-    return data
 
   def manFillInRegimen(self, df):
     # the algorithm of this function is as follows:
@@ -258,6 +326,7 @@ class Main:
 
       df[colNameDateReg].loc[df[colNameDateReg].isna()] = df[colNameTreat] + medianDelay
       return df
+    
     if "FIRST_START_DATE" in df.columns.values and "FIRST_DECISION_TO_TREAT" in df.columns.values:
       df = decToTreat(df, which = "FIRST")
     if "LAST_START_DATE" in df.columns.values and "LAST_DECISION_TO_TREAT" in df.columns.values:

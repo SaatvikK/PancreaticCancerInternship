@@ -73,6 +73,30 @@ class Aggregator:
     return self.dbRequester(path, query = query, overwrite = True, tableName = table1)
 
   # ========================= AGGREGATION METHODS ========================= #
+  # Aggregates the outcome table to the regimen level.
+  def outcomeRegimen(self):
+    # This method aggregates rhe regimen table on to the patient level.
+    # This SQL query will take every regimen row for each unique patient id and attempt to 
+    # aggregate the columns using the method that makes most sense.
+    query = """
+      select
+        MERGED_REGIMEN_ID as MERGED_REGIMEN_ID,
+        sum(REGIMEN_MOD_DOSE_REDUCTION) as NUM_MOD_DOSE_REDUCTIONS,
+        sum(REGIMEN_MOD_TIME_DELAY) as NUM_MOD_TIME_DELAYS,
+        sum(REGIMEN_MOD_STOPPED_EARLY) as NUM_MOD_STOPPED_EARLY
+      
+      from
+        outcome
+      
+      group by
+        MERGED_REGIMEN_ID
+    """
+    result = self.dbRequester(self.workingPath, query, overwrite = False, tableName = "outcome")
+    self.aggregations["outcome->regimen"] = result
+    print("======== OUTCOME -> REGIMEN ========")
+    print(result)
+    return result
+    
   # Aggregates the regimen table to the patient level.
   def regimenPatient(self):
     # This method aggregates rhe regimen table on to the patient level.
@@ -98,7 +122,7 @@ class Aggregator:
     """
     result = self.dbRequester(self.workingPath, query, overwrite = False, tableName = "regimen")
     self.aggregations["regimen->patient"] = result
-    print("======== REGIMEN -> PATIENT ========")
+    print("======== (OUTCOME?, REGIMEN) -> PATIENT ========")
     print(result)
     return result
   
