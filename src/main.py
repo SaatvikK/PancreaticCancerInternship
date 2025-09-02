@@ -8,6 +8,9 @@ import preprocessing.aggregation as aggregation
 import numpy as np
 import sklearn as skl
 import pprint as pp
+import shap
+import scipy.sparse as sp
+import matplotlib.pyplot as plt
 
 class Main:
   def __init__(self, dbPath = "../data-v2-working/Data", dbname = "dataset"):
@@ -59,11 +62,11 @@ class Main:
     mergedTable.drop(columns=["PATIENTID", "LINKNUMBER"], inplace = True)
     # Drop the last 5 common features, as outlined by feature ranking (main README.md under #badRecallInvestigation)
     # "NUM_TUMOURS", "GLEASON_PRIMARY", "AVE_WEIGHT", "GRADE"
-    mergedTable.drop(columns=["NUM_TUMOURS", "AVE_WEIGHT", "GRADE"], inplace = True)
+    #mergedTable.drop(columns=["NUM_TUMOURS", "AVE_WEIGHT", "GRADE"], inplace = True)
 
     # Drop the next 5
     # "GLEASON_SECONDARY", "LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"
-    mergedTable.drop(columns=["LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"], inplace = True)
+    #mergedTable.drop(columns=["LAST_START_DATE", "AVE_HEIGHT", "ETHNICITY", "AGE"], inplace = True)
     print(mergedTable)
 
     # write the table to the db for later usage
@@ -76,7 +79,7 @@ class Main:
       mergedTable.drop(columns=[self.preprocor.label]), 
       forcedCatFeatures = set(c for c in mergedTable.drop(columns=[self.preprocor.label]).columns 
                               if c not in { "AGE","AVE_HEIGHT","AVE_WEIGHT", "FIRST_DECISION_TO_TREAT", "LAST_DECISION_TO_TREAT",
-                                           "FIRST_START_DATE", "LAST_START_DATE" }
+                                           "FIRST_START_DATE", "LAST_START_DATE", "COUNT_DATE", "DATE_OVERALL_TS", "GENE" }
       )
       # ^^ because all variables are categorical other than AGE HEIGHT and WEIGHT
       # Add all columns in mergedTable to forcedCatFeatures as long as the feature is not in the set provided
@@ -97,10 +100,10 @@ class Main:
     data["train"]["X"], data["train"]["Y"] = self.preprocor.debias(data["train"]["X"], data["train"]["Y"], method = "smote", cat = dfInfo[2])
 
     # normalise / scale / one hot encode
-    data["train"]["X"], data["validation"]["X"], data["test"]["X"] = preproc.Preprocessor.normalise(
-      data["train"]["X"], data["validation"]["X"], data["test"]["X"],
-      dfInfo
-    )
+    #data["train"]["X"], data["validation"]["X"], data["test"]["X"] = preproc.Preprocessor.normalise(
+    #  data["train"]["X"], data["validation"]["X"], data["test"]["X"],
+    #  dfInfo
+    #)
 
     print("FINAL FINAL FINAL")
     print(data["train"]["X"].shape[1])
@@ -110,10 +113,10 @@ class Main:
     #data["train"]["X"], data["train"]["Y"] = preproc.Preprocessor.convToNumpy(data["train"]["X"]), preproc.Preprocessor.convToNumpy(data["train"]["Y"])
     #data["validation"]["X"], data["validation"]["Y"] = preproc.Preprocessor.convToNumpy(data["validation"]["X"]), preproc.Preprocessor.convToNumpy(data["validation"]["Y"])
     #data["test"]["X"], data["test"]["Y"] = preproc.Preprocessor.convToNumpy(data["test"]["X"]), preproc.Preprocessor.convToNumpy(data["test"]["Y"])
-    
-    self.runModels(data)
+    targetPrecision = 0.6
+    self.runModels(data, targetPrecision)
 
-  def runModels(self, data):
+  def runModels(self, data, targetPrecision):
     # Train the models
     """
     print("===================== K NN MODEL =====================")
@@ -146,54 +149,62 @@ class Main:
     selector.fit(data["train"]["X"], data["train"]["Y"])
     print(selector.ranking_)
     """
+    """
     print("===================== DTC MODEL =====================")
     dtc = models.dtcModel(preload = None)
-    dtc.train(data)
+    trainres = dtc.train(data = data, targetPrecision = targetPrecision)
+    if type(trainres) == str: 
+      print("XXXX USING NORMAL MODEL AS CALIBRATION FAILED: " + trainres)
     res, Ypred = dtc.test(data)
     dtc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-    print("Feature Ranking")
-    print("-" * 60)
-    print("DTC Feature Ranking with RFE:")
-    selector = skl.feature_selection.RFE(dtc.model, step = 1, n_features_to_select = 1)
-    #selector.fit(data["train"]["X"], data["train"]["Y"])
-    #print(selector.ranking_)
 
     print("===================== RFC MODEL =====================")
     rfc = models.rfcModel(preload = None)
-    rfc.train(data)
+    trainres = rfc.train(data = data, targetPrecision = targetPrecision)
+    if type(trainres) == str: 
+      print("XXXX USING NORMAL MODEL AS CALIBRATION FAILED: " + trainres)
     res, Ypred = rfc.test(data)
     rfc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-    print("Feature Ranking")
-    print("-" * 60)
-    print("RFC Feature Ranking with RFE:")
-    selector = skl.feature_selection.RFE(rfc.model, step = 1, n_features_to_select = 1)
-    #selector.fit(data["train"]["X"], data["train"]["Y"])
-    #print(selector.ranking_)
+    """
     
     print("===================== XGB MODEL =====================")
     xgb = models.xgbModel(preload = None)
-    xgb.train(data)
+    trainres = xgb.train(data = data, targetPrecision = targetPrecision)
+    if type(trainres) == str: 
+      print("XXXX USING NORMAL MODEL AS CALIBRATION FAILED: " + trainres)
     res, Ypred = xgb.test(data)
     xgb.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-    print("Feature Ranking")
-    print("-" * 60)
-    #print("RFC Feature Ranking with RFE:")
-    #selector = skl.feature_selection.RFE(xgb.model, step = 1, n_features_to_select = 1)
-    #selector.fit(data["train"]["X"], data["train"]["Y"], )
-    #print(selector.ranking_)
+    
+    print("Shap:")
+    # One hot encoding and the normaliser outputs a CSR-Matrix: SHAP can't use this data type.
+    # So we make a "dense" background (a background of a dataset is just a random sub-sample of the set).
+    # "dense" as in a 2D numpy array.
 
-    #print("===================== NBC MODEL =====================")
-    #nbc = models.nbcModel(preload = None)
-    #nbc.train(data)
-    #res, Ypred = nbc.test(data)
-    #nbc.ppMetrics(data["test"]["Y"], Ypred, res, classLabels = ["alive", "dead"])
-    #print("Feature Ranking")
-    #print("-" * 60)
-    #print("RFC Feature Ranking with RFE:")
-    #selector = skl.feature_selection.RFE(nbc.model, step = 1, n_features_to_select = 1)
-    #selector.fit(data["train"]["X"], data["train"]["Y"], )
-    #print(selector.ranking_)
+    Xtr = data["train"]["X"] 
+    Xtest = data["test"]["X"]
 
+    # tiny, dense background
+    bgIdx = np.random.choice(Xtr.shape[0], size=min(200, Xtr.shape[0]), replace=False)
+    background = Xtr[bgIdx].toarray().astype("float32") if sp.issparse(Xtr) else Xtr[bgIdx].astype("float32")
+
+    # small, dense test batch
+    testBatchIdx = np.random.choice(Xtest.shape[0], size=min(500, Xtest.shape[0]), replace=False)
+    XTestSmall = Xtest[testBatchIdx].toarray().astype("float32") if sp.issparse(Xtest) else Xtest[testBatchIdx].astype("float32")
+
+    explainer = shap.Explainer(xgb.model, background)
+    shapVals = explainer(XTestSmall)
+    shap.summary_plot(shapVals, XTestSmall, show=False)   # important: prevent auto-show
+    plt.tight_layout()
+    plt.savefig("../results/shap results 02092025/shap_summary.png", dpi=300)
+    plt.close()
+
+    # waterfall plot for the first sample
+    shap.plots.waterfall(shapVals[1], show=False)
+    plt.tight_layout()
+    plt.savefig("../results/shap results 02092025/shap_waterfall_sample0.png", dpi=300)
+    plt.close()
+    
+  
   def aggregate(self):
     # Using the aggregator's in-built querier, get the patient table: `select * from patient`
     patient = self.aggor.dbRequester(self.aggor.workingPath, overwrite = False)

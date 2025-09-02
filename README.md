@@ -36,14 +36,32 @@ Tried debiasing with ADASYN too - did nothing.
 - Reasoning: Non-line based models work better (ref: see KNN, RFC, and DTC results vs. SVM & LogRC)
 
 
+## Calibration & SHAP (26/09/2025 - 02/09/2025)
 
+### Calibration, Normalisation, and One Hot Encoding
+Increased class 1 recall from 0.4 to 0.5 and even 0.65  (calibration) in some cases.
+Used it to find the model configuration that gives the highest recall for a set precision threshold.
+During this, overall accuracy remained **consistent** - which is good. Managed to increase recall without affecting overall performance negatively.
 
+### SHAP
+because one hot encoding outputs a CSR matrix, SHAP kept crashing.
+Taking a small background and then densifying it into a 2D numpy array fixes this.
 
+SHAP results: 
+`shap_summary.png` - beeswarm plot: “across many test samples, which features matter most, and how?” (global view).
+`shap_waterfall_sample0.png` - waterfall plot: “for this one test sample, which features drove the prediction?” (local view).
 
+note that:
+SHAP on one-hot encoded data can mess up the graphs because there's a lot of redundant features being measured which dont actually contribute much
+on their own.
 
+In `/results/shap results 02092025/` there's 2 types of results: with OHE and without OHE.
 
+We will explain **NO** OHE results here, as it makes more sense.
 
+From the beeswarm plot, we can see that features 13, 12, and 11 impact XGBoost the most. Whereas features 6, 4, and 3 have neglible impact.
 
+From the waterfall plot, it can be seen that, for the random test sample, features 13, 12, 11 contributed most to the final prediction (all 3 pushed the result down significantly)
 
 
 
@@ -52,24 +70,22 @@ Tried debiasing with ADASYN too - did nothing.
 
 (feature order)
 index: feature name
-0: PATIENTID
-1: ETHNICITY
-2: VITALSTATUS
-3: LINKNUMBER
-4: AVE_HEIGHT
-5: AVE_WEIGHT
-6: INTENT_OF_TREATMENT
-7: FIRST_DECISION_TO_TREAT
-8: LAST_DECISION_TO_TREAT
-9: FIRST_START_DATE
-10: LAST_START_DATE
-11: NUM_REGIMENS
-12: NUM_TUMOURS
-13: MAX_T_BEST
-14: MAX_N_BEST
-15: MAX_M_BEST
-16: MAX_STAGE_BEST
-17: GRADE
-18: AGE
-19: GLEASON_PRIMARY
-20: GLEASON_SECONDARY
+0  → ETHNICITY
+1  → VITALSTATUS
+2  → AVE_HEIGHT
+3  → AVE_WEIGHT
+4  → INTENT_OF_TREATMENT
+5  → FIRST_DECISION_TO_TREAT
+6  → LAST_DECISION_TO_TREAT
+7  → FIRST_START_DATE
+8  → LAST_START_DATE
+9  → NUM_REGIMENS
+10 → NUM_TUMOURS
+11 → MAX_T_BEST
+12 → MAX_N_BEST
+13 → MAX_M_BEST
+14 → MAX_STAGE_BEST
+15 → GRADE
+16 → AGE
+17 → GLEASON_PRIMARY
+18 → GLEASON_SECONDARY
